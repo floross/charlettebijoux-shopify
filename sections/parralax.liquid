@@ -1,0 +1,1759 @@
+{% style %}
+    @media only screen and (max-width: 767px) {
+    .small--hide {
+    display: none !important; }
+    }
+  @media only screen and (min-width: 768px) {
+    .txt-par1-hd--{{ section.id }} {
+      font-size: {{section.settings.par_hd_sz}}px;
+      letter-spacing: {{section.settings.par_letter_sp}}px;
+      font-weight : bold;
+    }
+    .txt-par1-subhd--{{section.id}} {
+      font-size: {{section.settings.par_subhd_sz}}px;
+      letter-spacing: {{section.settings.par_letter_sp}}px;
+    }
+    .parallax--{{ section.id }} a {
+      font-size:{{section.settings.par_button_sz}}px;
+      letter-spacing: {{section.settings.par_letter_sp}}px;
+    }
+    .parallax--{{ section.id }}{
+      position: relative;
+      z-index: 1;
+      height:{{section.settings.par_img_sz}}px;
+    }
+    .parallax-over--{{ section.id }}::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: {{section.settings.color_over}};
+      opacity: {{section.settings.par_opacity}}%;
+    }
+    .text-block--{{section.id}} {
+      position: absolute;
+      text-align : {{section.settings.par_txt_align}};
+      top: {{section.settings.par_txt_top_pos}}%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;width : 90%;
+    }
+  }
+  .txt-par1-hd--{{ section.id }} {
+    /* color: {{ section.settings.color_par1_hd_clr }}; */
+    color: #fff;
+  }
+  .txt-par1-subhd--{{section.id}} {
+    /* color:{{ section.settings.color_par1_subhd_clr }}; */
+    color: #fff;
+  }
+  .par1_button--{{section.id}} {
+    border-color: {{ section.settings.color_par1_but_txt }};
+    background : transparent;
+    color: #fff;
+  }
+{% endstyle %}
+<div class="small--hide {% if section.settings.paral-full == blank %} page-width {% endif %}">
+  {% for block in section.blocks limit: section.blocks.size %}
+    {% if block.settings.image != blank %}
+      <div
+        class="parallax--{{ section.id }} {% if section.settings.par-en-over %} parallax-over--{{ section.id }} {% endif %} lazyload"
+        style="
+          background-repeat: no-repeat;
+            background-attachment: fixed;
+          background-position: center top;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        "
+        data-expand="-40"
+        data-bgset="{{block.settings.image | img_url:''}}"
+        ;
+        title="{{block.settings.image.alt | escape }}"
+      >
+        <div class="text-block--{{section.id}}">
+          {% if block.settings['txt1-hd1'] != blank %}
+            {% if block.settings['parallax-h'] == 'h1' %}
+              <h1 class="txt-par1-hd--{{ section.id }} {{block.settings.par1_hd}}">{{ block.settings['txt1-hd1'] }}</h1>
+            {% elsif section.settings['parallax-h'] == 'h2' %}
+              <h2 class="txt-par1-hd--{{ section.id }} {{block.settings.par1_hd}}">{{ block.settings['txt1-hd1'] }}</h2>
+            {% else %}
+              <h3 class="txt-par1-hd--{{ section.id }} {{block.settings.par1_hd}}">{{ block.settings['txt1-hd1'] }}</h3>
+            {% endif %}
+          {% endif %}
+          {% if block.settings['txt1-hd2'] != blank %}
+            {% if section.settings['parallax-subh'] == 'h2' %}
+              <h2 class="txt-par1-subhd--{{section.id}} {{block.settings.par1_subhd}}">
+                {{ block.settings['txt1-hd2'] }}
+              </h2>
+            {% else %}
+              <h3 class="txt-par1-subhd--{{section.id}} {{block.settings.par1_subhd}}">
+                {{ block.settings['txt1-hd2'] }}
+              </h3>
+            {% endif %}
+          {% endif %}
+          {% if block.settings.par1_showbutton %}
+            <a
+              class="par1_button--{{section.id}} btn btn--tertiary btn--small {{block.settings.par1_button_pos}}"
+              href="{{ block.settings.par1_button_link }}"
+              title="{{ block.settings.par1_button_link | truncate: 22 }}"
+            >
+              {{ block.settings.par1_button_label | escape }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% else %}
+      <span>
+        {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+      </span>
+    {% endif %}
+  {% endfor %}
+</div>
+<script>
+  !(function (t, i) {
+    var a = function (e) {
+      i(t.lazySizes, e), t.removeEventListener('lazyunveilread', a, !0);
+    };
+    (i = i.bind(null, t, t.document)),
+      'object' == typeof module && module.exports
+        ? i(require('lazysizes'))
+        : t.lazySizes
+        ? a()
+        : t.addEventListener('lazyunveilread', a, !0);
+  })(window, function (e, t, i, a) {
+    'use strict';
+    var r = t.createElement('a').style;
+    ((t = 'objectFit' in r) && t && 'objectPosition' in r) ||
+      ((r = function (e) {}), e.addEventListener('lazyunveilread', r, !0), a && a.detail);
+  }),
+    (function (e, t) {
+      var i = function () {
+        t(e.lazySizes), e.removeEventListener('lazyunveilread', i, !0);
+      };
+      (t = t.bind(null, e, e.document)),
+        'object' == typeof module && module.exports
+          ? t(require('lazysizes'))
+          : e.lazySizes
+          ? i()
+          : e.addEventListener('lazyunveilread', i, !0);
+    })(window, function (o, c, u) {
+      'use strict';
+      function f(e, t, i) {
+        var r,
+          n,
+          s,
+          a = 0,
+          o = 0,
+          l = i;
+        if (e) {
+          if ('container' === t.ratio) {
+            for (a = l.scrollWidth, o = l.scrollHeight; !((a && o) || l === c); )
+              (a = (l = l.parentNode).scrollWidth), (o = l.scrollHeight);
+            a && o && (t.ratio = o / a);
+          }
+          (r = e),
+            (n = t),
+            ((s = []).srcset = []),
+            n.absUrl && (E.setAttribute('href', r), (r = E.href)),
+            (r = ((n.prefix || '') + r + (n.postfix || '')).replace(h, function (e, t) {
+              return d[typeof n[t]] ? n[t] : e;
+            })),
+            n.widths.forEach(function (e) {
+              var t = n.widthmap[e] || e,
+                i = n.aspectratio || n.ratio,
+                a = !n.aspectratio && p.traditionalRatio,
+                i = { u: r.replace(v, t).replace(b, i ? (a ? Math.round(e * i) : Math.round(e / i)) : ''), w: e };
+              s.push(i), s.srcset.push((i.c = i.u + ' ' + e + 'w'));
+            }),
+            ((e = s).isPicture = t.isPicture),
+            _ && 'IMG' == i.nodeName.toUpperCase()
+              ? i.removeAttribute(g.srcsetAttr)
+              : i.setAttribute(g.srcsetAttr, e.srcset.join(', ')),
+            Object.defineProperty(i, '_lazyrias', { value: e, writable: !0 });
+        }
+      }
+      function z(e, t) {
+        return (
+          (t = (function (r, e) {
+            function i(e, t) {
+              var i,
+                a = r.getAttribute('data-' + e);
+              if ((a || ((i = n.getPropertyValue('--ls-' + e)) && (a = i.trim())), a)) {
+                if ('true' == a) a = !0;
+                else if ('false' == a) a = !1;
+                else if (l.test(a)) a = parseFloat(a);
+                else if ('function' == typeof p[e]) a = p[e](r, a);
+                else if (A.test(a))
+                  try {
+                    a = JSON.parse(a);
+                  } catch (e) {}
+                s[e] = a;
+              } else
+                e in p && 'function' != typeof p[e]
+                  ? (s[e] = p[e])
+                  : t && 'function' == typeof p[e] && (s[e] = p[e](r, a));
+            }
+            var t,
+              n = o.getComputedStyle(r),
+              a = r.parentNode,
+              s = { isPicture: !(!a || !m.test(a.nodeName || '')) };
+            for (t in p) i(t);
+            return (
+              e.replace(h, function (e, t) {
+                t in s || i(t, !0);
+              }),
+              s
+            );
+          })(e, t)),
+          p.modifyOptions.call(e, { target: e, details: t, detail: t }),
+          u.fire(e, 'lazyriasmodifyoptions', t),
+          t
+        );
+      }
+      function y(e) {
+        return (
+          e.getAttribute(e.getAttribute('data-srcattr') || p.srcAttr) ||
+          e.getAttribute(g.srcsetAttr) ||
+          e.getAttribute(g.srcAttr) ||
+          e.getAttribute('data-pfsrcset') ||
+          ''
+        );
+      }
+      var g,
+        p,
+        d = { string: 1, number: 1 },
+        l = /^\-*\+*\d+\.*\d*$/,
+        m = /^picture$/i,
+        v = /\s*\{\s*width\s*\}\s*/i,
+        b = /\s*\{\s*height\s*\}\s*/i,
+        h = /\s*\{\s*([a-z0-9]+)\s*\}\s*/gi,
+        A = /^\[.*\]|\{.*\}$/,
+        C = /^(?:auto|\d+(px)?)$/,
+        E = c.createElement('a'),
+        e = c.createElement('img'),
+        _ = 'srcset' in e && !('sizes' in e),
+        w = !!o.HTMLPictureElement && !_;
+      !(function () {
+        var e,
+          t = {
+            prefix: '',
+            postfix: '',
+            srcAttr: 'data-src',
+            absUrl: !1,
+            modifyOptions: function () {},
+            widthmap: {},
+            ratio: !1,
+            traditionalRatio: !1,
+            aspectratio: !1,
+          };
+        for (e in ((g = (u && u.cfg) || o.lazySizesConfig) || ((g = {}), (o.lazySizesConfig = g)),
+        g.rias || (g.rias = {}),
+        'widths' in (p = g.rias) ||
+          ((p.widths = []),
+          (function (e) {
+            for (var t, i = 0; !t || t < 3e3; ) 30 < (i += 5) && (i += 1), (t = 36 * i), e.push(t);
+          })(p.widths)),
+        t))
+          e in p || (p[e] = t[e]);
+      })(),
+        addEventListener(
+          'lazybeforesizes',
+          function (e) {
+            var t, i, a, r, n, s, o, l, c, d;
+            if (
+              e.detail.instance == u &&
+              ((t = e.target),
+              e.detail.dataAttr &&
+                !e.defaultPrevented &&
+                !p.disabled &&
+                (l = t.getAttribute(g.sizesAttr) || t.getAttribute('sizes')) &&
+                C.test(l))
+            ) {
+              if (
+                ((i = z(t, (e = y(t)))), (c = v.test(i.prefix) || v.test(i.postfix)), i.isPicture && (a = t.parentNode))
+              )
+                for (n = 0, s = (r = a.getElementsByTagName('source')).length; n < s; n++)
+                  (c || v.test((o = y(r[n])))) && (f(o, i, r[n]), (d = !0));
+              c || v.test(e)
+                ? (f(e, i, t), (d = !0))
+                : d &&
+                  (((e = []).srcset = []),
+                  (e.isPicture = !0),
+                  Object.defineProperty(t, '_lazyrias', { value: e, writable: !0 })),
+                d &&
+                  (w
+                    ? t.removeAttribute(g.srcAttr)
+                    : 'auto' != l && ((l = { width: parseInt(l, 10) }), S({ target: t, detail: l })));
+            }
+          },
+          !0
+        );
+    }),
+    (function (e) {
+      var t = (function (a, f) {
+        'use strict';
+        if (f.getElementsByClassName) {
+          var z,
+            y,
+            g = f.documentElement,
+            n = a.Date,
+            r = a.HTMLPictureElement,
+            s = 'addEventListener',
+            p = 'getAttribute',
+            e = a[s],
+            c = a.setTimeout,
+            i = a.requestAnimationFrame || c,
+            o = a.requestIdleCallback,
+            d = /^picture$/i,
+            l = ['load', 'error', 'lazyincluded', '_lazyloaded'],
+            u = {},
+            m = Array.prototype.forEach,
+            v = function (e, t) {
+              return u[t] || (u[t] = new RegExp('(\\s|^)' + t + '(\\s|$)')), u[t].test(e[p]('class') || '') && u[t];
+            },
+            b = function (e, t) {
+              v(e, t) || e.setAttribute('class', (e[p]('class') || '').trim() + ' ' + t);
+            },
+            h = function (e, t) {
+              (t = v(e, t)) && e.setAttribute('class', (e[p]('class') || '').replace(t, ' '));
+            },
+            A = function (t, i, e) {
+              var a = e ? s : 'removeEventListener';
+              e && A(t, i),
+                l.forEach(function (e) {
+                  t[a](e, i);
+                });
+            },
+            C = function (e, t, i, a, r) {
+              var n = f.createEvent('Event');
+              return ((i = i || {}).instance = z), n.initEvent(t, !a, !r), (n.detail = i), e.dispatchEvent(n), n;
+            },
+            E = function (e, t) {
+              var i;
+              !r && (i = a.picturefill || y.pf)
+                ? (t && t.src && !e[p]('srcset') && e.setAttribute('srcset', t.src),
+                  i({ reevaluate: !0, elements: [e] }))
+                : t && t.src && (e.src = t.src);
+            },
+            _ = function (e, t) {
+              return (getComputedStyle(e, null) || {})[t];
+            },
+            w = function (e, t, i) {
+              for (i = i || e.offsetWidth; i < y.minSize && t && !e._lazysizesWidth; )
+                (i = t.offsetWidth), (t = t.parentNode);
+              return i;
+            },
+            S = ((ge = []), (pe = ye = []), (we._lsFlush = _e), we),
+            t = function (i, e) {
+              return e
+                ? function () {
+                    S(i);
+                  }
+                : function () {
+                    var e = this,
+                      t = arguments;
+                    S(function () {
+                      i.apply(e, t);
+                    });
+                  };
+            },
+            L = function (e) {
+              function t() {
+                (i = null), e();
+              }
+              var i,
+                a,
+                r = function () {
+                  var e = n.now() - a;
+                  e < 99 ? c(r, 99 - e) : (o || t)(t);
+                };
+              return function () {
+                (a = n.now()), (i = i || c(r, 99));
+              };
+            };
+          !(function () {
+            var e,
+              t = {
+                lazyClass: 'lazyload',
+                loadedClass: 'lazyloaded',
+                loadingClass: 'lazyloading',
+                preloadClass: 'lazypreload',
+                errorClass: 'lazyerror',
+                autosizesClass: 'lazyautosizes',
+                srcAttr: 'data-src',
+                srcsetAttr: 'data-srcset',
+                sizesAttr: 'data-sizes',
+                minSize: 40,
+                customMedia: {},
+                init: !0,
+                expFactor: 1.5,
+                hFac: 0.8,
+                loadMode: 2,
+                loadHidden: !0,
+                ricTimeout: 0,
+                throttleDelay: 125,
+              };
+            for (e in ((y = a.lazySizesConfig || a.lazysizesConfig || {}), t)) e in y || (y[e] = t[e]);
+            (a.lazySizesConfig = y),
+              c(function () {
+                y.init && x();
+              });
+          })();
+          var P =
+              ((Z = /^img$/i),
+              (ee = /^iframe$/i),
+              (te = 'onscroll' in a && !/(gle|ing)bot/.test(navigator.userAgent)),
+              (re = -1),
+              (J = be),
+              (G = ae = ie = 0),
+              (K = y.throttleDelay),
+              (X = y.ricTimeout),
+              (Y =
+                o && 49 < X
+                  ? function () {
+                      o(Ee, { timeout: X }), X !== y.ricTimeout && (X = y.ricTimeout);
+                    }
+                  : t(function () {
+                      c(Ee);
+                    }, !0)),
+              (se = t(he)),
+              (oe = function (e) {
+                se({ target: e.target });
+              }),
+              (le = t(function (t, e, i, a, r) {
+                var n, s, o, l;
+                (o = C(t, 'lazybeforeunveil', e)).defaultPrevented ||
+                  (a && (i ? b(t, y.autosizesClass) : t.setAttribute('sizes', a)),
+                  (i = t[p](y.srcsetAttr)),
+                  (a = t[p](y.srcAttr)),
+                  r && (s = (n = t.parentNode) && d.test(n.nodeName || '')),
+                  (l = e.firesLoad || ('src' in t && (i || a || s))),
+                  (o = { target: t }),
+                  b(t, y.loadingClass),
+                  l && (clearTimeout($), ($ = c(me, 2500)), A(t, oe, !0)),
+                  s && m.call(n.getElementsByTagName('source'), Ae),
+                  i
+                    ? t.setAttribute('srcset', i)
+                    : a &&
+                      !s &&
+                      (ee.test(t.nodeName)
+                        ? (function (t, i) {
+                            try {
+                              t.contentWindow.location.replace(i);
+                            } catch (e) {
+                              t.src = i;
+                            }
+                          })(t, a)
+                        : (t.src = a)),
+                  r && (i || s) && E(t, { src: a })),
+                  t._lazyRace && delete t._lazyRace,
+                  h(t, y.lazyClass),
+                  S(function () {
+                    var e = t.complete && 1 < t.naturalWidth;
+                    (l && !e) ||
+                      (e && b(t, 'ls-is-cached'),
+                      he(o),
+                      (t._lazyCache = !0),
+                      c(function () {
+                        '_lazyCache' in t && delete t._lazyCache;
+                      }, 9)),
+                      'lazy' == t.loading && ae--;
+                  }, !0);
+              })),
+              (de = L(function () {
+                (y.loadMode = 3), ne();
+              })),
+              (ue = function () {
+                O || (n.now() - R < 999 ? c(ue, 999) : ((O = !0), (y.loadMode = 3), ne(), e('scroll', Ce, !0)));
+              }),
+              {
+                _: function () {
+                  (R = n.now()),
+                    (z.elements = f.getElementsByClassName(y.lazyClass)),
+                    (T = f.getElementsByClassName(y.lazyClass + ' ' + y.preloadClass)),
+                    e('scroll', ne, !0),
+                    e('resize', ne, !0),
+                    a.MutationObserver
+                      ? new MutationObserver(ne).observe(g, { childList: !0, subtree: !0, attributes: !0 })
+                      : (g[s]('DOMNodeInserted', ne, !0), g[s]('DOMAttrModified', ne, !0), setInterval(ne, 999)),
+                    e('hashchange', ne, !0),
+                    [
+                      'focus',
+                      'mouseover',
+                      'click',
+                      'load',
+                      'transitionend',
+                      'animationend',
+                      'webkitAnimationEnd',
+                    ].forEach(function (e) {
+                      f[s](e, ne, !0);
+                    }),
+                    /d$|^c/.test(f.readyState) ? ue() : (e('load', ue), f[s]('DOMContentLoaded', ne), c(ue, 2e4)),
+                    z.elements.length ? (be(), S._lsFlush()) : ne();
+                },
+                checkElems: (ne = function (e) {
+                  var t;
+                  (e = !0 === e) && (X = 33),
+                    Q || ((Q = !0), (t = K - (n.now() - G)) < 0 && (t = 0), e || t < 9 ? Y() : c(Y, t));
+                }),
+                unveil: (ce = function (e) {
+                  var t, i, a, r;
+                  e._lazyRace ||
+                    (((!(r = 'auto' == (a = (i = Z.test(e.nodeName)) && (e[p](y.sizesAttr) || e[p]('sizes')))) && O) ||
+                      !i ||
+                      (!e[p]('src') && !e.srcset) ||
+                      e.complete ||
+                      v(e, y.errorClass) ||
+                      !v(e, y.lazyClass)) &&
+                      ((t = C(e, 'lazyunveilread').detail),
+                      r && N.updateElem(e, !0, e.offsetWidth),
+                      (e._lazyRace = !0),
+                      ae++,
+                      le(e, t, r, a, i)));
+                }),
+                _aLSL: Ce,
+              }),
+            N =
+              ((W = t(function (e, t, i, a) {
+                var r, n, s;
+                if (((e._lazysizesWidth = a), (a += 'px'), e.setAttribute('sizes', a), d.test(t.nodeName || '')))
+                  for (n = 0, s = (r = t.getElementsByTagName('source')).length; n < s; n++)
+                    r[n].setAttribute('sizes', a);
+                i.detail.dataAttr || E(e, i.detail);
+              })),
+              {
+                _: function () {
+                  (M = f.getElementsByClassName(y.autosizesClass)), e('resize', j);
+                },
+                checkElems: (j = L(function () {
+                  var e,
+                    t = M.length;
+                  if (t) for (e = 0; e < t; e++) F(M[e]);
+                })),
+                updateElem: F,
+              }),
+            x = function () {
+              x.i || ((x.i = !0), N._(), P._());
+            };
+          return (z = { cfg: y, autoSizer: N, loader: P, init: x, uP: E, aC: b, rC: h, hC: v, fire: C, gW: w, rAF: S });
+        }
+        function F(e, t, i) {
+          var a = e.parentNode;
+          a &&
+            ((i = w(e, a, i)),
+            (t = C(e, 'lazybeforesizes', { width: i, dataAttr: !!t })).defaultPrevented ||
+              ((i = t.detail.width) && i !== e._lazysizesWidth && W(e, a, t, i)));
+        }
+        var M,
+          W,
+          j,
+          T,
+          O,
+          $,
+          H,
+          R,
+          k,
+          q,
+          B,
+          D,
+          I,
+          U,
+          V,
+          J,
+          Q,
+          G,
+          K,
+          X,
+          Y,
+          Z,
+          ee,
+          te,
+          ie,
+          ae,
+          re,
+          ne,
+          se,
+          oe,
+          le,
+          ce,
+          de,
+          ue,
+          fe,
+          ze,
+          ye,
+          ge,
+          pe;
+        function me(e) {
+          ae--, (e && !(ae < 0) && e.target) || (ae = 0);
+        }
+        function ve(e) {
+          return (
+            null == V && (V = 'hidden' == _(f.body, 'visibility')),
+            V || ('hidden' != _(e.parentNode, 'visibility') && 'hidden' != _(e, 'visibility'))
+          );
+        }
+        function be() {
+          var e,
+            t,
+            i,
+            a,
+            r,
+            n,
+            s,
+            o,
+            l,
+            c,
+            d,
+            u = z.elements;
+          if ((H = y.loadMode) && ae < 8 && (e = u.length)) {
+            for (t = 0, re++; t < e; t++)
+              if (u[t] && !u[t]._lazyRace)
+                if (!te || (z.prematureUnveil && z.prematureUnveil(u[t]))) ce(u[t]);
+                else if (
+                  (((s = u[t][p]('data-expand')) && (r = +s)) || (r = ie),
+                  l ||
+                    ((l =
+                      !y.expand || y.expand < 1 ? (500 < g.clientHeight && 500 < g.clientWidth ? 500 : 370) : y.expand),
+                    (c = (z._defEx = l) * y.expFactor),
+                    (d = y.hFac),
+                    (V = null),
+                    ie < c && ae < 1 && 2 < re && 2 < H && !f.hidden
+                      ? ((ie = c), (re = 0))
+                      : (ie = 1 < H && 1 < re && ae < 6 ? l : 0)),
+                  o !== r && ((k = innerWidth + r * d), (q = innerHeight + r), (n = -1 * r), (o = r)),
+                  (c = u[t].getBoundingClientRect()),
+                  (U = c.bottom) >= n &&
+                    (B = c.top) <= q &&
+                    (I = c.right) >= n * d &&
+                    (D = c.left) <= k &&
+                    (U || I || D || B) &&
+                    (y.loadHidden || ve(u[t])) &&
+                    ((O && ae < 3 && !s && (H < 3 || re < 4)) ||
+                      (function (e, t) {
+                        var i,
+                          a = e,
+                          r = ve(e);
+                        for (B -= t, U += t, D -= t, I += t; r && (a = a.offsetParent) && a != f.body && a != g; )
+                          (r = 0 < (_(a, 'opacity') || 1)) &&
+                            'visible' != _(a, 'overflow') &&
+                            ((i = a.getBoundingClientRect()),
+                            (r = I > i.left && D < i.right && U > i.top - 1 && B < i.bottom + 1));
+                        return r;
+                      })(u[t], r)))
+                ) {
+                  if ((ce(u[t]), (a = !0), 9 < ae)) break;
+                } else
+                  !a &&
+                    O &&
+                    !i &&
+                    ae < 4 &&
+                    re < 4 &&
+                    2 < H &&
+                    (T[0] || y.preloadAfterLoad) &&
+                    (T[0] || (!s && (U || I || D || B || 'auto' != u[t][p](y.sizesAttr)))) &&
+                    (i = T[0] || u[t]);
+            i && !a && ce(i);
+          }
+        }
+        function he(e) {
+          var t = e.target;
+          t._lazyCache
+            ? delete t._lazyCache
+            : (me(e), b(t, y.loadedClass), h(t, y.loadingClass), A(t, oe), C(t, 'lazyloaded'));
+        }
+        function Ae(e) {
+          var t,
+            i = e[p](y.srcsetAttr);
+          (t = y.customMedia[e[p]('data-media') || e[p]('media')]) && e.setAttribute('media', t),
+            i && e.setAttribute('srcset', i);
+        }
+        function Ce() {
+          3 == y.loadMode && (y.loadMode = 2), de();
+        }
+        function Ee() {
+          (Q = !1), (G = n.now()), J();
+        }
+        function _e() {
+          var e = pe;
+          for (pe = ye.length ? ge : ye, ze = !(fe = !0); e.length; ) e.shift()();
+          fe = !1;
+        }
+        function we(e, t) {
+          fe && !t ? e.apply(this, arguments) : (pe.push(e), ze || ((ze = !0), (f.hidden ? c : i)(_e)));
+        }
+      })(e, e.document);
+      (e.lazySizes = t), 'object' == typeof module && module.exports && (module.exports = t);
+    })(window),
+    (function (e, t) {
+      var i = function () {
+        t(e.lazySizes), e.removeEventListener('lazyunveilread', i, !0);
+      };
+      (t = t.bind(null, e, e.document)),
+        'object' == typeof module && module.exports
+          ? t(require('lazysizes'))
+          : e.lazySizes
+          ? i()
+          : e.addEventListener('lazyunveilread', i, !0);
+    })(window, function (l, e, i) {
+      'use strict';
+      var c, s, o, d, u;
+      l.addEventListener &&
+        ((c = /\s+(\d+)(w|h)\s+(\d+)(w|h)/),
+        (s = /parent-fit["']*\s*:\s*["']*(contain|cover|width)/),
+        (o = /parent-container["']*\s*:\s*["']*(.+?)(?=(\s|$|,|'|"|;))/),
+        (d = /^picture$/i),
+        (u = {
+          getParent: function (e, t) {
+            var i = e,
+              a = e.parentNode;
+            return (
+              (t && 'prev' != t) || !a || !d.test(a.nodeName || '') || (a = a.parentNode),
+              'self' != t &&
+                (i =
+                  'prev' == t
+                    ? e.previousElementSibling
+                    : (t && (a.closest || l.jQuery) && (a.closest ? a.closest(t) : jQuery(a).closest(t)[0])) || a),
+              i
+            );
+          },
+          getFit: function (e) {
+            var t,
+              i,
+              a = getComputedStyle(e, null) || {},
+              r = a.content || a.fontFamily,
+              n = { fit: e._lazysizesParentFit || e.getAttribute('data-parent-fit') };
+            return (
+              !n.fit && r && (t = r.match(s)) && (n.fit = t[1]),
+              n.fit
+                ? (!(i = e._lazysizesParentContainer || e.getAttribute('data-parent-container')) &&
+                    r &&
+                    (t = r.match(o)) &&
+                    (i = t[1]),
+                  (n.parent = u.getParent(e, i)))
+                : (n.fit = a.objectFit),
+              n
+            );
+          },
+          getImageRatio: function (e) {
+            for (
+              var t,
+                i,
+                a,
+                r,
+                n = e.parentNode,
+                s = n && d.test(n.nodeName || '') ? n.querySelectorAll('source, img') : [e],
+                o = 0;
+              o < s.length;
+              o++
+            )
+              if (
+                ((r =
+                  (e = s[o]).getAttribute(lazySizesConfig.srcsetAttr) ||
+                  e.getAttribute('srcset') ||
+                  e.getAttribute('data-pfsrcset') ||
+                  e.getAttribute('data-risrcset') ||
+                  ''),
+                (t = e._lsMedia || e.getAttribute('media')),
+                (t = lazySizesConfig.customMedia[e.getAttribute('data-media') || t] || t),
+                r && (!t || ((l.matchMedia && matchMedia(t)) || {}).matches))
+              ) {
+                (i = parseFloat(e.getAttribute('data-aspectratio'))) ||
+                  ((r = (r = r.match(c))
+                    ? 'w' == r[2]
+                      ? ((a = r[1]), r[3])
+                      : ((a = r[3]), r[1])
+                    : ((a = e.getAttribute('width')), e.getAttribute('height'))),
+                  (i = a / r));
+                break;
+              }
+            return i;
+          },
+          calculateSize: function (e, t) {
+            var i,
+              a,
+              r = (n = this.getFit(e)).fit,
+              n = n.parent;
+            return 'width' == r || (('contain' == r || 'cover' == r) && (a = this.getImageRatio(e)))
+              ? (n ? (t = n.clientWidth) : (n = e),
+                (e = t),
+                'width' == r
+                  ? (e = t)
+                  : 40 < (n = n.clientHeight) &&
+                    (i = t / n) &&
+                    (('cover' == r && i < a) || ('contain' == r && a < i)) &&
+                    (e = t * (a / i)),
+                e)
+              : t;
+          },
+        }),
+        (i.parentFit = u),
+        e.addEventListener('lazybeforesizes', function (e) {
+          var t;
+          e.defaultPrevented ||
+            e.detail.instance != i ||
+            ((t = e.target), (e.detail.width = u.calculateSize(t, e.detail.width)));
+        }));
+    }),
+    (function (e, t) {
+      var i = function () {
+        t(e.lazySizes), e.removeEventListener('lazyunveilread', i, !0);
+      };
+      (t = t.bind(null, e, e.document)),
+        'object' == typeof module && module.exports
+          ? t(require('lazysizes'))
+          : e.lazySizes
+          ? i()
+          : e.addEventListener('lazyunveilread', i, !0);
+    })(window, function (a, e, t) {
+      'use strict';
+      var i,
+        r = t && t.cfg,
+        n = 'sizes' in (s = e.createElement('img')) && 'srcset' in s,
+        s = void Array.prototype.forEach;
+      r.supportsType ||
+        (r.supportsType = function (e) {
+          return !e;
+        }),
+        a.HTMLPictureElement && n
+          ? !t.hasHDescriptorFix && e.msElementsFromPoint && ((t.hasHDescriptorFix = !0), s())
+          : a.picturefill ||
+            r.pf ||
+            ((r.pf = function (e) {
+              var t, i;
+              if (!a.picturefill) for (t = 0, i = e.elements.length; t < i; t++) (void 0)(e.elements[t]);
+            }),
+            r.loadedClass &&
+              r.loadingClass &&
+              ((i = []),
+              ['img[sizes$="px"][srcset].', 'picture > img:not([srcset]).'].forEach(function (e) {
+                i.push(e + r.loadedClass), i.push(e + r.loadingClass);
+              }),
+              r.pf({ elements: e.querySelectorAll(i.join(', ')) })));
+    }),
+    (function (e, t) {
+      var i = function () {
+        t(e.lazySizes), e.removeEventListener('lazyunveilread', i, !0);
+      };
+      (t = t.bind(null, e, e.document)),
+        'object' == typeof module && module.exports
+          ? t(require('lazysizes'))
+          : e.lazySizes
+          ? i()
+          : e.addEventListener('lazyunveilread', i, !0);
+    })(window, function (e, l, d) {
+      'use strict';
+      var u, f, z, a, r, y;
+      e.addEventListener &&
+        ((u = /\s+/g),
+        (f = /\s*\|\s+|\s+\|\s*/g),
+        (z = /^(.+?)(?:\s+\[\s*(.+?)\s*\])(?:\s+\[\s*(.+?)\s*\])?$/),
+        (a = /\(|\)|'/),
+        (r = { contain: 1, cover: 1 }),
+        (y = function (e) {
+          var t, i;
+          e.target._lazybgset &&
+            ((i = (t = e.target)._lazybgset),
+            (e = t.currentSrc || t.src) &&
+              ((e = d.fire(i, 'bgsetproxy', { src: e, useSrc: a.test(e) ? JSON.stringify(e) : e })).defaultPrevented ||
+                (i.style.backgroundImage = 'url(' + e.detail.useSrc + ')')),
+            t._lazybgsetLoading && (d.fire(i, '_lazyloaded', {}, !1, !0), delete t._lazybgsetLoading));
+        }),
+        addEventListener('lazybeforeunveil', function (e) {
+          var t, i, a, r, n, s, o;
+          !e.defaultPrevented &&
+            (s = e.target.getAttribute('data-bgset')) &&
+            ((o = e.target),
+            ((t = l.createElement('img')).alt = ''),
+            (t._lazybgsetLoading = !0),
+            (e.detail.firesLoad = !0),
+            (i = s),
+            (a = o),
+            (e = t),
+            (r = l.createElement('picture')),
+            (n = a.getAttribute(lazySizesConfig.sizesAttr)),
+            (s = a.getAttribute('data-ratio')),
+            (o = a.getAttribute('data-optimumx')),
+            a._lazybgset && a._lazybgset.parentNode == a && a.removeChild(a._lazybgset),
+            Object.defineProperty(e, '_lazybgset', { value: a, writable: !0 }),
+            Object.defineProperty(a, '_lazybgset', { value: r, writable: !0 }),
+            (i = i.replace(u, ' ').split(f)),
+            (r.style.display = 'none'),
+            (e.className = lazySizesConfig.lazyClass),
+            1 != i.length || n || (n = 'auto'),
+            i.forEach(function (e) {
+              var t,
+                i = l.createElement('source');
+              n && 'auto' != n && i.setAttribute('sizes', n),
+                (t = e.match(z))
+                  ? (i.setAttribute(lazySizesConfig.srcsetAttr, t[1]), c(i, t[2]), c(i, t[3]))
+                  : i.setAttribute(lazySizesConfig.srcsetAttr, e),
+                r.appendChild(i);
+            }),
+            n &&
+              (e.setAttribute(lazySizesConfig.sizesAttr, n),
+              a.removeAttribute(lazySizesConfig.sizesAttr),
+              a.removeAttribute('sizes')),
+            o && e.setAttribute('data-optimumx', o),
+            s && e.setAttribute('data-ratio', s),
+            r.appendChild(e),
+            a.appendChild(r),
+            setTimeout(function () {
+              d.loader.unveil(t),
+                d.rAF(function () {
+                  d.fire(t, '_lazyloaded', {}, !0, !0), t.complete && y({ target: t });
+                });
+            }));
+        }),
+        l.addEventListener('load', y, !0),
+        e.addEventListener(
+          'lazybeforesizes',
+          function (e) {
+            var t, i, a;
+            e.detail.instance == d &&
+              e.target._lazybgset &&
+              e.detail.dataAttr &&
+              ((i = e.target._lazybgset),
+              (a = (getComputedStyle(i) || { getPropertyValue: function () {} }).getPropertyValue('background-size')),
+              !r[a] && r[i.style.backgroundSize] && (a = i.style.backgroundSize),
+              r[(t = a)] &&
+                ((e.target._lazysizesParentFit = t),
+                d.rAF(function () {
+                  e.target.setAttribute('data-parent-fit', t),
+                    e.target._lazysizesParentFit && delete e.target._lazysizesParentFit;
+                })));
+          },
+          !0
+        ),
+        l.documentElement.addEventListener('lazybeforesizes', function (e) {
+          var t;
+          !e.defaultPrevented &&
+            e.target._lazybgset &&
+            e.detail.instance == d &&
+            (e.detail.width =
+              ((t = e.target._lazybgset),
+              (e = d.gW(t, t.parentNode)),
+              (!t._lazysizesWidth || e > t._lazysizesWidth) && (t._lazysizesWidth = e),
+              t._lazysizesWidth));
+        }));
+    });
+</script>
+{% schema %}
+{
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Parallax is hidden on mobile by default, because it won't work on some mobile devices [Need help?](https:\/\/websensepro.com\/contact-us\)"
+    },
+    {
+      "type": "checkbox",
+      "id": "paral-full",
+      "label": {
+        "cs": "Plná šířka",
+        "da": "Fuld bredde",
+        "de": "Volle Breite",
+        "en": "Full width",
+        "es": "Ancho completo",
+        "fi": "Täysi leveys",
+        "fr": "Pleine largeur",
+        "it": "Intera larghezza",
+        "ja": "全幅",
+        "ko": "전체 폭",
+        "nb": "Full bredde",
+        "nl": "Volledige breedte",
+        "pl": "Pełna szerokość",
+        "pt-BR": "Largura completa",
+        "pt-PT": "Largura total",
+        "sv": "Full bredd",
+        "th": "เต็มความกว้าง",
+        "tr": "Tam genişlik",
+        "vi": "Độ rộng đầy đủ",
+        "zh-CN": "全宽",
+        "zh-TW": "全寬度"
+      },
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "par_img_sz",
+      "label": {
+        "cs": "Výška obrazu",
+        "da": "Billedhøjde",
+        "de": "Bildhöhe",
+        "en": "Image height",
+        "es": "Altura de imagen",
+        "fi": "Kuvan korkeus",
+        "fr": "Hauteur de l'image",
+        "it": "Altezza immagine",
+        "ja": "画像の高さ",
+        "ko": "이미지 높이",
+        "nb": "Bildens høyde",
+        "nl": "Hoogte afbeelding",
+        "pl": "Wysokość obrazu",
+        "pt-BR": "Altura da imagem",
+        "pt-PT": "Altura da imagem",
+        "sv": "Bildhöjd",
+        "th": "ความสูงของภาพ",
+        "tr": "Görüntü yüksekliği",
+        "vi": "Chiều cao hình ảnh",
+        "zh-CN": "图片高度",
+        "zh-TW": "圖片高度"
+      },
+      "default": "400"
+    },
+    {
+      "type": "text",
+      "id": "par_hd_sz",
+      "label": {
+        "cs": "Velikost názvu",
+        "da": "Titelstørrelse",
+        "de": "Größe des Titels",
+        "en": "Header text size",
+        "es": "Tamaño del título",
+        "fi": "Otsikon koko",
+        "fr": "Taille du titre",
+        "it": "Dimensione del titolo",
+        "ja": "タイトルサイズ",
+        "ko": "제목 크기",
+        "nb": "Tittelstørrelse",
+        "nl": "Titel grootte",
+        "pl": "Rozmiar tytułu",
+        "pt-BR": "Tamanho do título",
+        "pt-PT": "Tamanho do título",
+        "sv": "Titelstorlek",
+        "th": "ขนาดชื่อเรื่อง",
+        "tr": "Başlık boyutu",
+        "vi": "Kích thước tiêu đề",
+        "zh-CN": "标题大小",
+        "zh-TW": "標題大小"
+      },
+      "default": "55"
+    },
+    {
+      "type": "text",
+      "id": "par_subhd_sz",
+      "label": {
+        "cs": "Velikost titulků",
+        "da": "Undertekststørrelse",
+        "de": "Subheader-Größe",
+        "en": "Subheader size",
+        "es": "Tamaño del subtítulo",
+        "fi": "Tekstityksen koko",
+        "fr": "Taille du sous-titre",
+        "it": "Dimensione dei sottotitoli",
+        "ja": "字幕サイズ",
+        "ko": "자막 크기",
+        "nb": "Tekststørrelse",
+        "nl": "Ondertitel grootte",
+        "pl": "Rozmiar napisów",
+        "pt-BR": "Tamanho da legenda",
+        "pt-PT": "Tamanho da legenda",
+        "sv": "Undertextstorlek",
+        "th": "ขนาดคำบรรยาย",
+        "tr": "altyazı boyutu",
+        "vi": "Kích thước phụ đề",
+        "zh-CN": "字幕大小",
+        "zh-TW": "字幕大小"
+      },
+      "default": "25"
+    },
+    {
+      "type": "text",
+      "id": "par_button_sz",
+      "label": {
+        "cs": "velikost textu tlačítka",
+        "da": "knaptekststørrelse",
+        "de": "Textgröße der Schaltfläche",
+        "en": "button text size",
+        "es": "Tamaño del texto del botón",
+        "fi": "painikkeen tekstin koko",
+        "fr": "Taille du texte du bouton",
+        "it": "dimensione del testo del pulsante",
+        "ja": "ボタンのテキストサイズ",
+        "ko": "버튼 텍스트 크기",
+        "nb": "knappestørrelse på knappen",
+        "nl": "tekstgrootte knop",
+        "pl": "rozmiar tekstu przycisku",
+        "pt-BR": "tamanho do texto do botão",
+        "pt-PT": "tamanho do texto do botão",
+        "sv": "knappens textstorlek",
+        "th": "ขนาดตัวอักษรของปุ่ม",
+        "tr": "düğme metin boyutu",
+        "vi": "kích thước văn bản nút",
+        "zh-CN": "按钮文字大小",
+        "zh-TW": "按鈕文字大小"
+      },
+      "default": "25"
+    },
+    {
+      "type": "text",
+      "id": "par_letter_sp",
+      "label": {
+        "cs": "Mezery mezi písmeny",
+        "da": "Mellemrum mellem bogstaver",
+        "de": "Buchstabenabstand",
+        "en": "Letter spacing",
+        "es": "Espaciado entre letras ",
+        "fi": "Kirjainväli",
+        "fr": "Espacement des lettres",
+        "it": "Spaziatura del carattere",
+        "ja": "文字間隔",
+        "ko": "문자 간격",
+        "nb": "Avstand mellom bokstavene",
+        "nl": "Letterafstand",
+        "pl": "Odstępy między literami",
+        "pt-BR": "Espaçamento entre letras",
+        "pt-PT": "Espaçamento entre letras",
+        "sv": "Teckenavstånd",
+        "th": "ระยะห่างระหว่างตัวอักษร",
+        "tr": "Harf boşluğu",
+        "vi": "Khoảng cách giữa các chữ cái",
+        "zh-CN": "字母间距",
+        "zh-TW": "字母間距"
+      },
+      "default": "1"
+    },
+    {
+      "type": "radio",
+      "id": "par_txt_align",
+      "options": [
+        {
+          "value": "right",
+          "label": {
+            "cs": "Doprava",
+            "da": "Højre",
+            "de": "Rechts",
+            "en": "Right",
+            "es": "Derecha",
+            "fi": "Oikea",
+            "fr": "Droite",
+            "it": "Destra",
+            "ja": "右",
+            "ko": "오른쪽",
+            "nb": "Høyre",
+            "nl": "Rechts",
+            "pl": "Do prawej",
+            "pt-BR": "Direita",
+            "pt-PT": "Direita",
+            "sv": "Höger",
+            "th": "ด้านขวา",
+            "tr": "Sağ",
+            "vi": "Bên phải",
+            "zh-CN": "右侧",
+            "zh-TW": "右方"
+          }
+        },
+        {
+          "value": "left",
+          "label": {
+            "cs": "Doleva",
+            "da": "Venstre",
+            "de": "Links",
+            "en": "Left",
+            "es": "Izquierda",
+            "fi": "Vasen",
+            "fr": "Gauche",
+            "it": "Sinistra",
+            "ja": "左",
+            "ko": "왼쪽",
+            "nb": "Venstre",
+            "nl": "Links",
+            "pl": "Do lewej",
+            "pt-BR": "Esquerda",
+            "pt-PT": "Esquerda",
+            "sv": "Vänster",
+            "th": "ด้านซ้าย",
+            "tr": "Sol",
+            "vi": "Bên trái",
+            "zh-CN": "左侧",
+            "zh-TW": "左方"
+          }
+        },
+        {
+          "value": "center",
+          "label": {
+            "cs": "Na střed",
+            "da": "Centreret",
+            "de": "Mittig",
+            "en": "Centered",
+            "es": "Centrada",
+            "fi": "Keskitetty",
+            "fr": "Centré",
+            "it": "Centrato",
+            "ja": "中央揃え",
+            "ko": "센터 맞추기",
+            "nb": "Sentrert",
+            "nl": "Gecentreerd",
+            "pl": "Wyśrodkowane",
+            "pt-BR": "Centralizado",
+            "pt-PT": "Centrado",
+            "sv": "Centrera",
+            "th": "ตรงกลาง",
+            "tr": "Orta",
+            "vi": "Giữa",
+            "zh-CN": "居中",
+            "zh-TW": "置中"
+          }
+        }
+      ],
+      "label": {
+        "cs": "Zarovnání textu",
+        "da": "Tekstjustering",
+        "de": "Textausrichtung",
+        "en": "Text alignment",
+        "es": "Alineación de texto",
+        "fi": "Tekstin tasaus",
+        "fr": "Alignement du texte",
+        "it": "Allineamento del testo",
+        "ja": "テキストアラインメント",
+        "ko": "텍스트 정렬",
+        "nb": "Tekstjustering",
+        "nl": "Tekstuitlijning",
+        "pl": "Wyrównanie tekstu",
+        "pt-BR": "Alinhamento de texto",
+        "pt-PT": "Alinhamento de texto",
+        "sv": "Textjustering",
+        "th": "การจัดตำแหน่งข้อความ",
+        "tr": "Metin hizalaması",
+        "vi": "Căn chỉnh văn bản",
+        "zh-CN": "文本对齐方式",
+        "zh-TW": "文字對齊"
+      },
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "par_txt_top_pos",
+      "label": {
+        "cs": "Pozice textu v%",
+        "da": "Tekstposition i%",
+        "de": "Textposition in %",
+        "en": "Text position in %",
+        "es": "Posición del texto en%",
+        "fi": "Tekstin sijainti prosentteina",
+        "fr": "Position du texte en %",
+        "it": "Posizione del testo in %",
+        "ja": "％単位のテキスト位置",
+        "ko": "%의 텍스트 위치",
+        "nb": "Tekstposisjon i%",
+        "nl": "Tekstpositie in %",
+        "pl": "Pozycja tekstu w %",
+        "pt-BR": "Posição do texto em%",
+        "pt-PT": "Posição do texto em%",
+        "sv": "Textposition i%",
+        "th": "ตำแหน่งข้อความใน%",
+        "tr": "% olarak metin konumu",
+        "vi": "Vị trí văn bản trong%",
+        "zh-CN": "以 % 为单位的文本位置",
+        "zh-TW": "以 % 為單位的文本位置"
+      },
+      "default": "50"
+    },
+    {
+      "type": "checkbox",
+      "id": "par-en-over",
+      "label": {
+        "cs": "Povolit překrytí",
+        "da": "Aktivér overlay",
+        "de": "Overlay aktivieren",
+        "en": "Enable overlay",
+        "es": "Habilitar superposición",
+        "fi": "Ota peittokuva käyttöön",
+        "fr": "Activer la superposition",
+        "it": "Abilita sovrapposizione",
+        "ja": "オーバーレイを有効にする",
+        "ko": "오버레이 활성화",
+        "nb": "Aktiver overlegg",
+        "nl": "Overlay inschakelen",
+        "pl": "Włącz nakładkę",
+        "pt-BR": "Habilitar sobreposição",
+        "pt-PT": "Habilitar sobreposição",
+        "sv": "Aktivera överlägg",
+        "th": "เปิดใช้งานการวางซ้อน",
+        "tr": "Yer paylaşımını etkinleştir",
+        "vi": "Bật lớp phủ",
+        "zh-CN": "启用叠加",
+        "zh-TW": "啟用疊加"
+      },
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "color_over",
+      "label": {
+        "cs": "Barva překrytí",
+        "da": "Overlay farve",
+        "de": "Überlagerungsfarbe",
+        "en": "Overlay color",
+        "es": "Color de superposición",
+        "fi": "Peitteen väri",
+        "fr": "Couleur de superposition",
+        "it": "Colore della sovrapposizione",
+        "ja": "オーバーレイカラー",
+        "ko": "오버레이 색상",
+        "nb": "Overleggsfarge",
+        "nl": "Overlaykleur",
+        "pl": "Kolor nakładki",
+        "pt-BR": "Cor de sobreposição",
+        "pt-PT": "Cor de sobreposição",
+        "sv": "Överläggsfärg",
+        "th": "สีซ้อนทับ",
+        "tr": "Kaplama rengi",
+        "vi": "Lớp phủ màu",
+        "zh-CN": "叠加颜色",
+        "zh-TW": "疊加顏色"
+      },
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "par_opacity",
+      "label": {
+        "cs": "Neprůhlednost",
+        "da": "Uigennemsigtighed",
+        "de": "Opazität",
+        "en": "Opacity",
+        "es": "Opacidad",
+        "fi": "Sameus",
+        "fr": "Opacité",
+        "it": "Opacità",
+        "ja": "不透過率",
+        "ko": "불투명도",
+        "nb": "Gjennomsiktighet",
+        "nl": "Doorschijnendheid",
+        "pl": "Nieprzezroczystość",
+        "pt-BR": "Opacidade",
+        "pt-PT": "Opacidade",
+        "sv": "Opacitet",
+        "th": "ความทึบ",
+        "tr": "Opaklık",
+        "vi": "Độ chắn sáng",
+        "zh-CN": "不透明度",
+        "zh-TW": "透明度"
+      },
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": {
+        "cs": "%",
+        "da": "%",
+        "de": "%",
+        "en": "%",
+        "es": "%",
+        "fi": "%",
+        "fr": "%",
+        "it": "%",
+        "ja": "%",
+        "ko": "%",
+        "nb": "%",
+        "nl": "%",
+        "pl": "%",
+        "pt-BR": "%",
+        "pt-PT": "%",
+        "sv": "%",
+        "th": "%",
+        "tr": "%",
+        "vi": "%",
+        "zh-CN": "%",
+        "zh-TW": "%"
+      },
+      "default": 50
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "text",
+      "name": {
+        "cs": "Paralaxa",
+        "da": "Parallaks",
+        "de": "Parallaxe",
+        "en": "Parallax",
+        "es": "Paralaje",
+        "fi": "Parallaksi",
+        "fr": "Parallaxe",
+        "it": "Parallasse",
+        "ja": "視差",
+        "ko": "시차",
+        "nb": "Parallaks",
+        "nl": "Parallax",
+        "pl": "Paralaksa",
+        "pt-BR": "Paralaxe",
+        "pt-PT": "Paralaxe",
+        "sv": "Parallax",
+        "th": "พารัลแลกซ์",
+        "tr": "Paralaks",
+        "vi": "Thị sai",
+        "zh-CN": "视差",
+        "zh-TW": "視差"
+      },
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "cs": "Obrázek",
+            "da": "Billede",
+            "de": "Foto",
+            "en": "Image",
+            "es": "Imagen",
+            "fi": "Kuva",
+            "fr": "Image",
+            "it": "Immagine",
+            "ja": "画像",
+            "ko": "이미지",
+            "nb": "Bilde",
+            "nl": "Afbeelding",
+            "pl": "Obraz",
+            "pt-BR": "Imagem",
+            "pt-PT": "Imagem",
+            "sv": "Bild",
+            "th": "รูปภาพ",
+            "tr": "Görsel",
+            "vi": "Hình ảnh",
+            "zh-CN": "图片",
+            "zh-TW": "圖片"
+          }
+        },
+        {
+          "type": "text",
+          "id": "txt1-hd1",
+          "label": {
+            "cs": "Nadpis",
+            "da": "Overskrift",
+            "de": "Titel",
+            "en": "Heading",
+            "es": "Título",
+            "fi": "Otsake",
+            "fr": "En-tête",
+            "it": "Heading",
+            "ja": "見出し",
+            "ko": "제목",
+            "nb": "Overskrift",
+            "nl": "Kop",
+            "pl": "Nagłówek",
+            "pt-BR": "Título",
+            "pt-PT": "Título",
+            "sv": "Rubrik",
+            "th": "ส่วนหัว",
+            "tr": "Başlık",
+            "vi": "Tiêu đề",
+            "zh-CN": "标题",
+            "zh-TW": "標題"
+          }
+        },
+        {
+          "type": "select",
+          "id": "parallax-h",
+          "label": {
+            "cs": "Značka nadpisu",
+            "da": "Overskriftskode",
+            "de": "Überschrift-Tag",
+            "en": "Heading tag",
+            "es": "Etiqueta de encabezado",
+            "fi": "Otsikkotunniste",
+            "fr": "Balise d'en-tête",
+            "it": "Etichetta di intestazione",
+            "ja": "見出しタグ",
+            "ko": "제목 태그",
+            "nb": "Overskrift",
+            "nl": "Koptekst",
+            "pl": "Tag nagłówka",
+            "pt-BR": "Tag de cabeçalho",
+            "pt-PT": "Tag de cabeçalho",
+            "sv": "Rubrikmärke",
+            "th": "แท็กหัวเรื่อง",
+            "tr": "başlık etiketi",
+            "vi": "Thẻ tiêu đề",
+            "zh-CN": "标题标签",
+            "zh-TW": "標題標籤"
+          },
+          "options": [
+            {
+              "value": "h1",
+              "label": {
+                "cs": "h1",
+                "da": "h1",
+                "de": "h1",
+                "en": "h1",
+                "es": "h1",
+                "fi": "h1",
+                "fr": "h1",
+                "it": "h1",
+                "ja": "h1",
+                "ko": "h1",
+                "nb": "h1",
+                "nl": "h1",
+                "pl": "h1",
+                "pt-BR": "h1",
+                "pt-PT": "h1",
+                "sv": "h1",
+                "th": "h1",
+                "tr": "h1",
+                "vi": "h1",
+                "zh-CN": "h1",
+                "zh-TW": "h1"
+              }
+            },
+            {
+              "value": "h2",
+              "label": {
+                "cs": "h2",
+                "da": "h2",
+                "de": "h2",
+                "en": "h2",
+                "es": "h2",
+                "fi": "h2",
+                "fr": "h2",
+                "it": "h2",
+                "ja": "h2",
+                "ko": "h2",
+                "nb": "h2",
+                "nl": "h2",
+                "pl": "h2",
+                "pt-BR": "h2",
+                "pt-PT": "h2",
+                "sv": "h2",
+                "th": "h2",
+                "tr": "h2",
+                "vi": "h2",
+                "zh-CN": "h2",
+                "zh-TW": "h2"
+              }
+            },
+            {
+              "value": "h3",
+              "label": {
+                "cs": "h3",
+                "da": "h3",
+                "de": "h3",
+                "en": "h3",
+                "es": "h3",
+                "fi": "h3",
+                "fr": "h3",
+                "it": "h3",
+                "ja": "h3",
+                "ko": "h3",
+                "nb": "h3",
+                "nl": "h3",
+                "pl": "h3",
+                "pt-BR": "h3",
+                "pt-PT": "h3",
+                "sv": "h3",
+                "th": "h3",
+                "tr": "h3",
+                "vi": "h3",
+                "zh-CN": "h3",
+                "zh-TW": "h3"
+              }
+            }
+          ],
+          "default": "h2"
+        },
+        {
+          "type": "text",
+          "id": "txt1-hd2",
+          "label": {
+            "cs": "Podnadpis",
+            "da": "Underoverskrift",
+            "de": "Untertitel",
+            "en": "Subheading",
+            "es": "Subtítulo",
+            "fi": "Alaotsikko",
+            "fr": "Sous-titre",
+            "it": "Sottotitolo",
+            "ja": "小見出し",
+            "ko": "소제목",
+            "nb": "Underoverskrift",
+            "nl": "Subkop",
+            "pl": "Nagłówek podrzędny",
+            "pt-BR": "Subtítulo",
+            "pt-PT": "Subtítulo",
+            "sv": "Underrubrik",
+            "th": "หัวเรื่องย่อย",
+            "tr": "Alt başlık",
+            "vi": "Tiêu đề phụ",
+            "zh-CN": "副标题",
+            "zh-TW": "子標題"
+          }
+        },
+        {
+          "type": "select",
+          "id": "parallax-subh",
+          "label": {
+            "cs": "Značka podnadpisu",
+            "da": "Underoverskrift tag",
+            "de": "Untertitel-Tag",
+            "en": "Subheading tag",
+            "es": "Etiqueta de subtítulo",
+            "fi": "Alaotsikkotunniste",
+            "fr": "Balise de sous-titre",
+            "it": "Tag sottotitolo",
+            "ja": "小見出しタグ",
+            "ko": "부제목 태그",
+            "nb": "Underoverskrift",
+            "nl": "Ondertitel tag",
+            "pl": "Tag podtytułu",
+            "pt-BR": "Tag de subtítulo",
+            "pt-PT": "Tag de subtítulo",
+            "sv": "Underrubrikstagg",
+            "th": "แท็กหัวข้อย่อย",
+            "tr": "alt başlık etiketi",
+            "vi": "Thẻ tiêu đề phụ",
+            "zh-CN": "副标题标签",
+            "zh-TW": "副標題標籤"
+          },
+          "options": [
+            {
+              "value": "h2",
+              "label": {
+                "cs": "h2",
+                "da": "h2",
+                "de": "h2",
+                "en": "h2",
+                "es": "h2",
+                "fi": "h2",
+                "fr": "h2",
+                "it": "h2",
+                "ja": "h2",
+                "ko": "h2",
+                "nb": "h2",
+                "nl": "h2",
+                "pl": "h2",
+                "pt-BR": "h2",
+                "pt-PT": "h2",
+                "sv": "h2",
+                "th": "h2",
+                "tr": "h2",
+                "vi": "h2",
+                "zh-CN": "h2",
+                "zh-TW": "h2"
+              }
+            },
+            {
+              "value": "h3",
+              "label": {
+                "cs": "h3",
+                "da": "h3",
+                "de": "h3",
+                "en": "h3",
+                "es": "h3",
+                "fi": "h3",
+                "fr": "h3",
+                "it": "h3",
+                "ja": "h3",
+                "ko": "h3",
+                "nb": "h3",
+                "nl": "h3",
+                "pl": "h3",
+                "pt-BR": "h3",
+                "pt-PT": "h3",
+                "sv": "h3",
+                "th": "h3",
+                "tr": "h3",
+                "vi": "h3",
+                "zh-CN": "h3",
+                "zh-TW": "h3"
+              }
+            }
+          ],
+          "default": "h3"
+        },
+        {
+          "type": "checkbox",
+          "id": "par1_showbutton",
+          "label": {
+            "cs": "Tlačítko Zobrazit",
+            "da": "Vis-knap",
+            "de": "Zeigen Sie die Schaltfläche",
+            "en": "Show button",
+            "es": "Mostrar botón",
+            "fi": "Näytä-painike",
+            "fr": "Afficher le button",
+            "it": "Mostra pulsante",
+            "ja": "表示ボタン",
+            "ko": "버튼 표시",
+            "nb": "Vis-knapp",
+            "nl": "Toon knop",
+            "pl": "Pokaż przycisk",
+            "pt-BR": "Mostrar botão",
+            "pt-PT": "Mostrar botão",
+            "sv": "Visa-knapp",
+            "th": "แสดงปุ่ม",
+            "tr": "Düğmeyi göster",
+            "vi": "Hiển thị nút",
+            "zh-CN": "显示按钮",
+            "zh-TW": "顯示按鈕"
+          },
+          "default": true
+        },
+
+        {
+          "type": "text",
+          "id": "par1_button_label",
+          "label": {
+            "cs": "Text tlačítka",
+            "da": "Knaptekst",
+            "de": "Button-Name",
+            "en": "Button label",
+            "es": "Etiqueta de botón",
+            "fi": "Tekstipainike",
+            "fr": "Texte du bouton",
+            "it": "Etichetta pulsante",
+            "ja": "ボタンのラベル",
+            "ko": "버튼 레이블",
+            "nb": "Knappetikett",
+            "nl": "Knoplabel",
+            "pl": "Przycisk z etykietą",
+            "pt-BR": "Etiqueta de botão",
+            "pt-PT": "Etiqueta do botão",
+            "sv": "Knappetikett",
+            "th": "ป้ายกำกับปุ่ม",
+            "tr": "Düğme etiketi",
+            "vi": "Nhãn nút",
+            "zh-CN": "按钮标签",
+            "zh-TW": "按鈕標籤"
+          }
+        },
+        {
+          "type": "url",
+          "id": "par1_button_link",
+          "label": {
+            "cs": "Tlačítkový odkaz",
+            "da": "Knaplink",
+            "de": "Button-Link",
+            "en": "Button link",
+            "es": "Enlace de la diapositiva",
+            "fi": "Painikelinkki",
+            "fr": "Lien du bouton",
+            "it": "Link slide",
+            "ja": "ボタンのリンク",
+            "ko": "버튼 링크",
+            "nb": "Kobling for knapp",
+            "nl": "Knoplink",
+            "pl": "Link przycisku",
+            "pt-BR": "Link do slide",
+            "pt-PT": "Ligação do botão",
+            "sv": "Knapplänk",
+            "th": "ลิงก์ปุ่ม",
+            "tr": "Düğme bağlantısı",
+            "vi": "Liên kết trên nút",
+            "zh-CN": "按钮链接",
+            "zh-TW": "按鈕連結"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Parallax",
+      "category": "Layout"
+    }
+  ]
+}
+{% endschema %}
