@@ -24,10 +24,38 @@
           "settings": {
             "image": "shopify://shop_images/IMG_8624.jpg"
           }
+        },
+        "image_block_NbpMXc": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2035.jpg"
+          }
+        },
+        "image_block_zGVLrx": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2048.jpg"
+          }
+        },
+        "image_block_AyQXbV": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2009.jpg"
+          }
+        },
+        "image_block_Tbj9rf": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2052.jpg"
+          }
         }
       },
       "block_order": [
-        "image_block_TBbPUY"
+        "image_block_TBbPUY",
+        "image_block_NbpMXc",
+        "image_block_zGVLrx",
+        "image_block_AyQXbV",
+        "image_block_Tbj9rf"
       ],
       "name": "Galerie LightGallery",
       "settings": {}
