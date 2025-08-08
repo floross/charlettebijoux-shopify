@@ -1,19 +1,75 @@
 {% comment %}
-  Section : lightgallery
-  Affiche une galerie d'images sélectionnées manuellement et filtrées par alt
-  Utilisable sur n'importe quelle page (landing, CMS…)
+  Section : lightgallery (masonry 3 colonnes centrées)
 {% endcomment %}
 
 {% if section.blocks.size > 0 %}
   <div class="lightgallery-wrapper">
-    <div id="lightgallery-{{ section.id }}">
+    <div id="lightgallery-{{ section.id }}" class="lg-masonry">
       {% for block in section.blocks %}
-        <a href="{{ block.settings.image | image_url: width: 1600 }}" data-lg-size="1600-1067">
-          <img src="{{ block.settings.image | image_url: width: 300 }}" alt="{{ block.settings.image.alt }}">
+        <a href="{{ block.settings.image | image_url: width: 1600 }}">
+          <img
+            src="{{ block.settings.image | image_url: width: 600 }}"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+          >
         </a>
       {% endfor %}
     </div>
   </div>
+
+  <style>
+    /* --- Conteneur centré --- */
+    .lightgallery-wrapper {
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 16px;
+    }
+
+    /* --- Masonry : 3 colonnes --- */
+    #lightgallery-{{ section.id }}.lg-masonry {
+      column-count: 3;       /* nombre de colonnes */
+      column-gap: 16px;      /* espace entre colonnes */
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      #lightgallery-{{ section.id }}.lg-masonry {
+        column-count: 2;
+      }
+    }
+    @media (max-width: 640px) {
+      #lightgallery-{{ section.id }}.lg-masonry {
+        column-count: 1;
+      }
+    }
+
+    /* Empêche les liens de se casser sur plusieurs colonnes */
+    #lightgallery-{{ section.id }} a {
+      display: inline-block;
+      margin-bottom: 8px; /* espace entre images */
+      width: 100%;
+    }
+
+    /* Miniatures responsives */
+    #lightgallery-{{ section.id }} img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* --- Lightbox centrée --- */
+    .lg-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lg-object {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+    }
+  </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -21,7 +77,15 @@
       if (galleryEl && window.lightGallery) {
         lightGallery(galleryEl, {
           selector: 'a',
+          plugins: typeof lgZoom !== 'undefined' && typeof lgThumbnail !== 'undefined' ? [lgZoom, lgThumbnail] : [],
+          speed: 400,
           download: false,
+          mobileSettings: {
+            controls: true,
+            showCloseIcon: true,
+            download: false,
+            rotate: false,
+          },
         });
       }
     });
@@ -52,10 +116,10 @@
       ]
     }
   ],
-  "max_blocks": 20,
+  "max_blocks": 50,
   "presets": [
     {
-      "name": "Galerie LightGallery",
+      "name": "Galerie LightGallery (masonry 3 colonnes)",
       "blocks": []
     }
   ]
