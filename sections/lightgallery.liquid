@@ -1,0 +1,67 @@
+{% comment %}
+  Section : lightgallery
+  Affiche une galerie d'images sélectionnées manuellement et filtrées par alt
+  Utilisable sur n'importe quelle page (landing, CMS…)
+{% endcomment %}
+
+{% if section.blocks.size > 0 %}
+  <div class="lightgallery-wrapper">
+    <div id="lightgallery-{{ section.id }}">
+      {% for block in section.blocks %}
+        {% if block.settings.image and block.settings.image.alt contains section.settings.alt_keyword %}
+          <a href="{{ block.settings.image | image_url: width: 1600 }}" data-lg-size="1600-1067">
+            <img src="{{ block.settings.image | image_url: width: 300 }}" alt="{{ block.settings.image.alt }}">
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const galleryEl = document.getElementById('lightgallery-{{ section.id }}');
+      if (galleryEl && window.lightGallery) {
+        lightGallery(galleryEl, {
+          selector: 'a',
+          download: false,
+        });
+      }
+    });
+  </script>
+{% else %}
+  <p>Aucune image n'a été ajoutée à la galerie.</p>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Galerie LightGallery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "alt_keyword",
+      "label": "Mot-clé du alt à filtrer (facultatif)",
+      "default": ""
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_block",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Galerie LightGallery",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
