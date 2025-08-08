@@ -8,11 +8,9 @@
   <div class="lightgallery-wrapper">
     <div id="lightgallery-{{ section.id }}">
       {% for block in section.blocks %}
-        {% if block.settings.image and block.settings.image.alt contains section.settings.alt_keyword %}
-          <a href="{{ block.settings.image | image_url: width: 1600 }}" data-lg-size="1600-1067">
-            <img src="{{ block.settings.image | image_url: width: 300 }}" alt="{{ block.settings.image.alt }}">
-          </a>
-        {% endif %}
+        <a href="{{ block.settings.image | image_url: width: 1600 }}" data-lg-size="1600-1067">
+          <img src="{{ block.settings.image | image_url: width: 300 }}" alt="{{ block.settings.image.alt }}">
+        </a>
       {% endfor %}
     </div>
   </div>
@@ -37,10 +35,8 @@
   "name": "Galerie LightGallery",
   "settings": [
     {
-      "type": "text",
-      "id": "alt_keyword",
-      "label": "Mot-clé du alt à filtrer (facultatif)",
-      "default": ""
+      "type": "header",
+      "content": "Ajoutez des images à votre galerie"
     }
   ],
   "blocks": [
