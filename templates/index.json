@@ -17,7 +17,7 @@
           "settings": {
             "image": "shopify://shop_images/50514809-295544171102463-8303071595996381184-n-2-1080x604.png",
             "txt1-hd1": "Charlette Bijoux",
-            "parallax-h": "h2",
+            "parallax-h": "h1",
             "txt1-hd2": "Bijoux fait avec amour",
             "parallax-subh": "h3",
             "par1_showbutton": true,
