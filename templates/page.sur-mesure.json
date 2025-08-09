@@ -54,6 +54,37 @@
         "par_speed": 100
       }
     },
+    "rich_text_TFLTqy": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_i6bcPa": {
+          "type": "heading",
+          "settings": {
+            "heading": "Parler de sa marque",
+            "heading_size": "h1"
+          }
+        },
+        "text_rC3Pyq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nous pouvons réaliser ensemble le bijou qui vous ressemble. Je réalise quelques croquis</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_i6bcPa",
+        "text_rC3Pyq"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "lightgallery_WxjUQq": {
       "type": "lightgallery",
       "blocks": {
@@ -323,6 +354,7 @@
   "order": [
     "main",
     "parralax_YCUUxg",
+    "rich_text_TFLTqy",
     "lightgallery_WxjUQq",
     "rich_text_Jh889M"
   ]
