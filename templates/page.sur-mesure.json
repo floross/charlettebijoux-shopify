@@ -26,11 +26,12 @@
             "image": "shopify://shop_images/50514809-295544171102463-8303071595996381184-n-2-1080x604.png",
             "txt1-hd1": "Sur-mesure",
             "parallax-h": "h2",
-            "txt1-hd2": "",
+            "txt1-hd2": "Ceci est un test de texte",
             "parallax-subh": "h3",
             "par1_showbutton": true,
             "par1_button_label": "",
-            "par1_button_link": ""
+            "par1_button_link": "",
+            "par_speed_block": 35
           }
         }
       },
@@ -49,7 +50,8 @@
         "par_txt_top_pos": "50",
         "par-en-over": true,
         "color_over": "#000000",
-        "par_opacity": 50
+        "par_opacity": 36,
+        "par_speed": 100
       }
     },
     "lightgallery_WxjUQq": {
