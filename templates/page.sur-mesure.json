@@ -88,12 +88,6 @@
     "lightgallery_WxjUQq": {
       "type": "lightgallery",
       "blocks": {
-        "image_block_TBbPUY": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/Collier_opale_4.jpg"
-          }
-        },
         "image_block_zGVLrx": {
           "type": "image_block",
           "settings": {
@@ -148,12 +142,6 @@
             "image": "shopify://shop_images/Bague_deux_opales_diamant.jpg"
           }
         },
-        "image_block_xjDF8A": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/Bague_boules_et_diamant.jpg"
-          }
-        },
         "image_block_RGpgQN": {
           "type": "image_block",
           "settings": {
@@ -172,16 +160,34 @@
             "image": "shopify://shop_images/Collier_mandala.jpg"
           }
         },
+        "image_block_96HDVX": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_argent_ajoure_2.jpg"
+          }
+        },
         "image_block_M4rpnc": {
           "type": "image_block",
           "settings": {
             "image": "shopify://shop_images/Collier_opale_3.jpg"
           }
         },
+        "image_block_Yfh9zi": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_trio.jpg"
+          }
+        },
         "image_block_Bnm86K": {
           "type": "image_block",
           "settings": {
             "image": "shopify://shop_images/Collier_opale_triangle.jpg"
+          }
+        },
+        "image_block_xjDF8A": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_boules_et_diamant.jpg"
           }
         },
         "image_block_wJMWGc": {
@@ -214,12 +220,6 @@
             "image": "shopify://shop_images/Collier_opale_4.jpg"
           }
         },
-        "image_block_Yfh9zi": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/Bague_trio.jpg"
-          }
-        },
         "image_block_VDGFfJ": {
           "type": "image_block",
           "settings": {
@@ -230,12 +230,6 @@
           "type": "image_block",
           "settings": {
             "image": "shopify://shop_images/Collier_argent_ajoure.jpg"
-          }
-        },
-        "image_block_96HDVX": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/Collier_argent_ajoure_2.jpg"
           }
         },
         "image_block_teL7c3": {
@@ -272,7 +266,6 @@
         }
       },
       "block_order": [
-        "image_block_TBbPUY",
         "image_block_zGVLrx",
         "image_block_NbpMXc",
         "image_block_Bf4cQy",
@@ -282,21 +275,21 @@
         "image_block_wPcYJL",
         "image_block_3nwgBm",
         "image_block_JamQbt",
-        "image_block_xjDF8A",
         "image_block_RGpgQN",
         "image_block_LUVBqL",
         "image_block_ip3LwC",
+        "image_block_96HDVX",
         "image_block_M4rpnc",
+        "image_block_Yfh9zi",
         "image_block_Bnm86K",
+        "image_block_xjDF8A",
         "image_block_wJMWGc",
         "image_block_K7ndjM",
         "image_block_iNJNej",
         "image_block_BQNpf3",
         "image_block_zRbaNH",
-        "image_block_Yfh9zi",
         "image_block_VDGFfJ",
         "image_block_R47tdi",
-        "image_block_96HDVX",
         "image_block_teL7c3",
         "image_block_qrRCbF",
         "image_block_jch8WG",
