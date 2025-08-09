@@ -61,22 +61,22 @@
             "image": "shopify://shop_images/IMG_8624.jpg"
           }
         },
-        "image_block_NbpMXc": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2035.jpg"
-          }
-        },
-        "image_block_jL4Cyw": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/charlettebijoux-logo.png"
-          }
-        },
         "image_block_zGVLrx": {
           "type": "image_block",
           "settings": {
             "image": "shopify://shop_images/IMG_2048.jpg"
+          }
+        },
+        "image_block_cbKbYF": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2061.jpg"
+          }
+        },
+        "image_block_NbpMXc": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/IMG_2035.jpg"
           }
         },
         "image_block_AyQXbV": {
@@ -94,9 +94,9 @@
       },
       "block_order": [
         "image_block_TBbPUY",
-        "image_block_NbpMXc",
-        "image_block_jL4Cyw",
         "image_block_zGVLrx",
+        "image_block_cbKbYF",
+        "image_block_NbpMXc",
         "image_block_AyQXbV",
         "image_block_Tbj9rf"
       ],
