@@ -9,6 +9,14 @@
  */
 {
   "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
     "parralax_YCUUxg": {
       "type": "parralax",
       "blocks": {
@@ -42,13 +50,6 @@
         "par-en-over": true,
         "color_over": "#000000",
         "par_opacity": 50
-      }
-    },
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
       }
     },
     "lightgallery_WxjUQq": {
