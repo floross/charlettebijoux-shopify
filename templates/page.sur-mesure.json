@@ -167,9 +167,69 @@
         },
         "image_block_iNJNej": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Collier_meraude.jpg"
+          }
+        },
+        "image_block_BQNpf3": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bracelet_opale_2.jpg"
+          }
+        },
+        "image_block_zRbaNH": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_opale_4.jpg"
+          }
+        },
+        "image_block_Yfh9zi": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_trio.jpg"
+          }
+        },
+        "image_block_VDGFfJ": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_7diamants.jpg"
+          }
+        },
+        "image_block_R47tdi": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_argent_ajoure.jpg"
+          }
+        },
+        "image_block_96HDVX": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_argent_ajoure_2.jpg"
+          }
         },
         "image_block_teL7c3": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_argent_ajoure_3.jpg"
+          }
+        },
+        "image_block_qrRCbF": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_opale_3.jpg"
+          }
+        },
+        "image_block_jch8WG": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_facettes.jpg"
+          }
+        },
+        "image_block_cwWBi8": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_e6FG4g": {
           "type": "image_block",
           "settings": {}
         },
@@ -198,7 +258,17 @@
         "image_block_wJMWGc",
         "image_block_K7ndjM",
         "image_block_iNJNej",
+        "image_block_BQNpf3",
+        "image_block_zRbaNH",
+        "image_block_Yfh9zi",
+        "image_block_VDGFfJ",
+        "image_block_R47tdi",
+        "image_block_96HDVX",
         "image_block_teL7c3",
+        "image_block_qrRCbF",
+        "image_block_jch8WG",
+        "image_block_cwWBi8",
+        "image_block_e6FG4g",
         "image_block_Q8qkRm"
       ],
       "name": "Galerie LightGallery",
