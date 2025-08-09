@@ -149,15 +149,21 @@
         },
         "image_block_Bnm86K": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Collier_opale_triangle.jpg"
+          }
         },
         "image_block_wJMWGc": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Collier_opale_2.jpg"
+          }
         },
         "image_block_K7ndjM": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Bague_opale_2.jpg"
+          }
         },
         "image_block_iNJNej": {
           "type": "image_block",
