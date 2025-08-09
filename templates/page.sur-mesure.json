@@ -60,47 +60,105 @@
         "image_block_TBbPUY": {
           "type": "image_block",
           "settings": {
-            "image": "shopify://shop_images/IMG_8624.jpg"
+            "image": "shopify://shop_images/Collier_opale_4.jpg"
           }
         },
         "image_block_zGVLrx": {
           "type": "image_block",
           "settings": {
-            "image": "shopify://shop_images/IMG_2048.jpg"
-          }
-        },
-        "image_block_cbKbYF": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2061.jpg"
+            "image": "shopify://shop_images/Bracelet_Opale_1.jpg"
           }
         },
         "image_block_NbpMXc": {
           "type": "image_block",
           "settings": {
-            "image": "shopify://shop_images/IMG_2035.jpg"
+            "image": "shopify://shop_images/Bague_opale_1.jpg"
           }
         },
-        "image_block_AyQXbV": {
+        "image_block_Bf4cQy": {
           "type": "image_block",
           "settings": {
-            "image": "shopify://shop_images/IMG_2009.jpg"
+            "image": "shopify://shop_images/Bracelet_deux_anneaux.jpg"
           }
         },
-        "image_block_Tbj9rf": {
+        "image_block_gDETxk": {
           "type": "image_block",
           "settings": {
-            "image": "shopify://shop_images/IMG_2052.jpg"
+            "image": "shopify://shop_images/Boucles_d_oreilles_turquoise.jpg"
           }
+        },
+        "image_block_3ntcLD": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_diamant_1.jpg"
+          }
+        },
+        "image_block_frc6jB": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_perle_d_eau_douce.jpg"
+          }
+        },
+        "image_block_wPcYJL": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_torsadee_courbee.jpg"
+          }
+        },
+        "image_block_3nwgBm": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_3diamants.jpg"
+          }
+        },
+        "image_block_JamQbt": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_deux_opales_diamant.jpg"
+          }
+        },
+        "image_block_xjDF8A": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_RGpgQN": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_LUVBqL": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_ip3LwC": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_M4rpnc": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_Q8qkRm": {
+          "type": "image_block",
+          "settings": {}
         }
       },
       "block_order": [
         "image_block_TBbPUY",
         "image_block_zGVLrx",
-        "image_block_cbKbYF",
         "image_block_NbpMXc",
-        "image_block_AyQXbV",
-        "image_block_Tbj9rf"
+        "image_block_Bf4cQy",
+        "image_block_gDETxk",
+        "image_block_3ntcLD",
+        "image_block_frc6jB",
+        "image_block_wPcYJL",
+        "image_block_3nwgBm",
+        "image_block_JamQbt",
+        "image_block_xjDF8A",
+        "image_block_RGpgQN",
+        "image_block_LUVBqL",
+        "image_block_ip3LwC",
+        "image_block_M4rpnc",
+        "image_block_Q8qkRm"
       ],
       "name": "Galerie LightGallery",
       "settings": {}
