@@ -94,6 +94,12 @@
             "image": "shopify://shop_images/Bracelet_Opale_1.jpg"
           }
         },
+        "image_block_JamQbt": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_deux_opales_diamant.jpg"
+          }
+        },
         "image_block_NbpMXc": {
           "type": "image_block",
           "settings": {
@@ -134,12 +140,6 @@
           "type": "image_block",
           "settings": {
             "image": "shopify://shop_images/Bague_3diamants.jpg"
-          }
-        },
-        "image_block_JamQbt": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/Bague_deux_opales_diamant.jpg"
           }
         },
         "image_block_RGpgQN": {
@@ -232,12 +232,6 @@
             "image": "shopify://shop_images/Collier_argent_ajoure.jpg"
           }
         },
-        "image_block_teL7c3": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/Collier_argent_ajoure_3.jpg"
-          }
-        },
         "image_block_qrRCbF": {
           "type": "image_block",
           "settings": {
@@ -250,6 +244,12 @@
             "image": "shopify://shop_images/Bague_facettes.jpg"
           }
         },
+        "image_block_teL7c3": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_argent_ajoure_3.jpg"
+          }
+        },
         "image_block_cwWBi8": {
           "type": "image_block",
           "settings": {
@@ -257,6 +257,52 @@
           }
         },
         "image_block_e6FG4g": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_tourmaline.jpg"
+          }
+        },
+        "image_block_69GXKF": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_perle_emeraude.jpg"
+          }
+        },
+        "image_block_TV7UTg": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0843.jpg"
+          }
+        },
+        "image_block_KTeWHk": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_QtVLpT": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_WRx4Fh": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_8t6pg8": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_qh8TgA": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_LnRNzH": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_9mEbab": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_3mnxUK": {
           "type": "image_block",
           "settings": {}
         },
@@ -267,6 +313,7 @@
       },
       "block_order": [
         "image_block_zGVLrx",
+        "image_block_JamQbt",
         "image_block_NbpMXc",
         "image_block_Bf4cQy",
         "image_block_gDETxk",
@@ -274,7 +321,6 @@
         "image_block_frc6jB",
         "image_block_wPcYJL",
         "image_block_3nwgBm",
-        "image_block_JamQbt",
         "image_block_RGpgQN",
         "image_block_LUVBqL",
         "image_block_ip3LwC",
@@ -290,11 +336,21 @@
         "image_block_zRbaNH",
         "image_block_VDGFfJ",
         "image_block_R47tdi",
-        "image_block_teL7c3",
         "image_block_qrRCbF",
         "image_block_jch8WG",
+        "image_block_teL7c3",
         "image_block_cwWBi8",
         "image_block_e6FG4g",
+        "image_block_69GXKF",
+        "image_block_TV7UTg",
+        "image_block_KTeWHk",
+        "image_block_QtVLpT",
+        "image_block_WRx4Fh",
+        "image_block_8t6pg8",
+        "image_block_qh8TgA",
+        "image_block_LnRNzH",
+        "image_block_9mEbab",
+        "image_block_3mnxUK",
         "image_block_Q8qkRm"
       ],
       "name": "Galerie LightGallery",
