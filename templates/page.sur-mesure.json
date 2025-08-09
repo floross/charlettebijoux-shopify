@@ -227,7 +227,9 @@
         },
         "image_block_cwWBi8": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Bague_texturee.jpg"
+          }
         },
         "image_block_e6FG4g": {
           "type": "image_block",
