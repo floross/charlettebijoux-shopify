@@ -119,21 +119,51 @@
         },
         "image_block_xjDF8A": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Bague_boules_et_diamant.jpg"
+          }
         },
         "image_block_RGpgQN": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Bague_soleil.jpg"
+          }
         },
         "image_block_LUVBqL": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Boucles_d_oreilles_double_torsade.jpg"
+          }
         },
         "image_block_ip3LwC": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Collier_mandala.jpg"
+          }
         },
         "image_block_M4rpnc": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_opale_3.jpg"
+          }
+        },
+        "image_block_Bnm86K": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_wJMWGc": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_K7ndjM": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_iNJNej": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_teL7c3": {
           "type": "image_block",
           "settings": {}
         },
@@ -158,6 +188,11 @@
         "image_block_LUVBqL",
         "image_block_ip3LwC",
         "image_block_M4rpnc",
+        "image_block_Bnm86K",
+        "image_block_wJMWGc",
+        "image_block_K7ndjM",
+        "image_block_iNJNej",
+        "image_block_teL7c3",
         "image_block_Q8qkRm"
       ],
       "name": "Galerie LightGallery",
