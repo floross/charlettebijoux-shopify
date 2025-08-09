@@ -9,60 +9,47 @@
  */
 {
   "sections": {
+    "parralax_YCUUxg": {
+      "type": "parralax",
+      "blocks": {
+        "text_LA4g6U": {
+          "type": "text",
+          "settings": {
+            "image": "shopify://shop_images/50514809-295544171102463-8303071595996381184-n-2-1080x604.png",
+            "txt1-hd1": "Alliances",
+            "parallax-h": "h2",
+            "txt1-hd2": "",
+            "parallax-subh": "h3",
+            "par1_showbutton": true,
+            "par1_button_label": "",
+            "par1_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_LA4g6U"
+      ],
+      "name": "Parallax",
+      "settings": {
+        "paral-full": true,
+        "par_img_sz": "400",
+        "par_hd_sz": "55",
+        "par_subhd_sz": "25",
+        "par_button_sz": "25",
+        "par_letter_sp": "1",
+        "par_txt_align": "center",
+        "par_txt_top_pos": "50",
+        "par-en-over": true,
+        "color_over": "#000000",
+        "par_opacity": 50
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
-      }
-    },
-    "image_banner_9NrByJ": {
-      "type": "image-banner",
-      "blocks": {
-        "heading_BARKJU": {
-          "type": "heading",
-          "settings": {
-            "heading": "Bannière avec image",
-            "heading_size": "h1"
-          }
-        },
-        "text_dVRD4q": {
-          "type": "text",
-          "settings": {
-            "text": "Fournissez des détails à votre clientèle sur l’image/les images ou le contenu de la bannière du modèle.",
-            "text_style": "body"
-          }
-        },
-        "buttons_yHJzW9": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Texte du bouton",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Texte du bouton",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_BARKJU",
-        "text_dVRD4q",
-        "buttons_yHJzW9"
-      ],
-      "name": "t:sections.image-banner.presets.name",
-      "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
       }
     },
     "lightgallery_WxjUQq": {
@@ -161,8 +148,8 @@
     }
   },
   "order": [
+    "parralax_YCUUxg",
     "main",
-    "image_banner_9NrByJ",
     "lightgallery_WxjUQq",
     "rich_text_Jh889M"
   ]
