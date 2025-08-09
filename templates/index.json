@@ -50,14 +50,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "",
+            "heading": "Lou Cantin, Bijoutière-Joaillière",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Lou Cantin </p>"
+            "text": "<p>Créée en 2019, </p>"
           }
         }
       },
