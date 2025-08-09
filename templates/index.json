@@ -18,7 +18,7 @@
             "image": "shopify://shop_images/50514809-295544171102463-8303071595996381184-n-2-1080x604.png",
             "txt1-hd1": "Charlette Bijoux",
             "parallax-h": "h1",
-            "txt1-hd2": "Bijoux fait avec amour",
+            "txt1-hd2": "Bijoux faits main et passion",
             "parallax-subh": "h3",
             "par1_showbutton": true,
             "par1_button_label": "",
@@ -50,14 +50,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Lou Cantin </p>"
           }
         }
       },
