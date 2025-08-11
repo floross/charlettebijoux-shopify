@@ -268,12 +268,6 @@
             "image": "shopify://shop_images/Collier_perle_emeraude.jpg"
           }
         },
-        "image_block_TV7UTg": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/IMG_0843.jpg"
-          }
-        },
         "image_block_KTeWHk": {
           "type": "image_block",
           "settings": {}
@@ -342,7 +336,6 @@
         "image_block_cwWBi8",
         "image_block_e6FG4g",
         "image_block_69GXKF",
-        "image_block_TV7UTg",
         "image_block_KTeWHk",
         "image_block_QtVLpT",
         "image_block_WRx4Fh",
