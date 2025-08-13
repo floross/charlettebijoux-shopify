@@ -59,42 +59,89 @@
       "blocks": {
         "image_block_TBbPUY": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Alliances_courbee_et_ruban_bross_e.jpg"
+          }
         },
         "image_block_zGVLrx": {
           "type": "image_block",
-          "settings": {}
-        },
-        "image_block_cbKbYF": {
-          "type": "image_block",
           "settings": {
-            "image": "shopify://shop_images/IMG_2061.jpg"
+            "image": "shopify://shop_images/Alliances_martelees_et_3_anneaux.jpg"
           }
         },
         "image_block_NbpMXc": {
           "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Alliances_or_blanc_et_rose_diamants.jpg"
+          }
+        },
+        "image_block_qNPgYh": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Alliances_ruban_brossee_et_diamants.jpg"
+          }
+        },
+        "image_block_xqx4WB": {
+          "type": "image_block",
           "settings": {}
         },
-        "image_block_AyQXbV": {
+        "image_block_Nwhycq": {
           "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2009.jpg"
-          }
+          "settings": {}
         },
-        "image_block_Tbj9rf": {
+        "image_block_7RK9zk": {
           "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2052.jpg"
-          }
+          "settings": {}
+        },
+        "image_block_AgVgpA": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_YTr9Rr": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_8zgrk9": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_iD9V3d": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_LpKHxy": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_XJYMiV": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_fKUwHB": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_EBizEe": {
+          "type": "image_block",
+          "settings": {}
         }
       },
       "block_order": [
         "image_block_TBbPUY",
         "image_block_zGVLrx",
-        "image_block_cbKbYF",
         "image_block_NbpMXc",
-        "image_block_AyQXbV",
-        "image_block_Tbj9rf"
+        "image_block_qNPgYh",
+        "image_block_xqx4WB",
+        "image_block_Nwhycq",
+        "image_block_7RK9zk",
+        "image_block_AgVgpA",
+        "image_block_YTr9Rr",
+        "image_block_8zgrk9",
+        "image_block_iD9V3d",
+        "image_block_LpKHxy",
+        "image_block_XJYMiV",
+        "image_block_fKUwHB",
+        "image_block_EBizEe"
       ],
       "name": "Galerie LightGallery",
       "settings": {}
