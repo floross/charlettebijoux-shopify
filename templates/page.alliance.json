@@ -103,7 +103,7 @@
         "image_block_TBbPUY": {
           "type": "image_block",
           "settings": {
-            "image": "shopify://shop_images/Alliances_courbee_et_ruban_bross_e.jpg"
+            "image": "shopify://shop_images/Bague_trio.jpg"
           }
         },
         "image_block_zGVLrx": {
@@ -126,23 +126,33 @@
         },
         "image_block_xqx4WB": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Alliances_ruban_martelee_et_ciselee_2.jpg"
+          }
         },
         "image_block_Nwhycq": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Alliance_ciselee.jpg"
+          }
         },
         "image_block_7RK9zk": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Alliance_courbee_diamants_et_ruban.jpg"
+          }
         },
         "image_block_AgVgpA": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Alliances_courbee_et_ruban_brossee.jpg"
+          }
         },
         "image_block_YTr9Rr": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Alliances_ruban_martelee_et_diamants_tour_complet.jpg"
+          }
         },
         "image_block_8zgrk9": {
           "type": "image_block",
