@@ -23,7 +23,7 @@
         "text_LA4g6U": {
           "type": "text",
           "settings": {
-            "image": "shopify://shop_images/Boucles_d_oreilles_turquoise.jpg",
+            "image": "shopify://shop_images/Collier_opale_4.jpg",
             "txt1-hd1": "Sur-mesure",
             "parallax-h": "h2",
             "txt1-hd2": "Fait main avec amour",
@@ -115,7 +115,13 @@
         "image_block_gDETxk": {
           "type": "image_block",
           "settings": {
-            "image": "shopify://shop_images/Boucles_d_oreilles_turquoise.jpg"
+            "image": "shopify://shop_images/Croquis_collier_opale.jpg"
+          }
+        },
+        "image_block_QtVLpT": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/boucles_doreilles_turquoise.jpg"
           }
         },
         "image_block_3ntcLD": {
@@ -166,6 +172,12 @@
             "image": "shopify://shop_images/Collier_argent_ajoure_2.jpg"
           }
         },
+        "image_block_K7ndjM": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_opale_2.jpg"
+          }
+        },
         "image_block_M4rpnc": {
           "type": "image_block",
           "settings": {
@@ -196,12 +208,6 @@
             "image": "shopify://shop_images/Collier_opale_2.jpg"
           }
         },
-        "image_block_K7ndjM": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/Bague_opale_2.jpg"
-          }
-        },
         "image_block_iNJNej": {
           "type": "image_block",
           "settings": {
@@ -212,12 +218,6 @@
           "type": "image_block",
           "settings": {
             "image": "shopify://shop_images/Bracelet_opale_2.jpg"
-          }
-        },
-        "image_block_zRbaNH": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/Collier_opale_4.jpg"
           }
         },
         "image_block_VDGFfJ": {
@@ -242,6 +242,12 @@
           "type": "image_block",
           "settings": {
             "image": "shopify://shop_images/Bague_facettes.jpg"
+          }
+        },
+        "image_block_zRbaNH": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_opale_4.jpg"
           }
         },
         "image_block_teL7c3": {
@@ -270,19 +276,21 @@
         },
         "image_block_KTeWHk": {
           "type": "image_block",
-          "settings": {}
-        },
-        "image_block_QtVLpT": {
-          "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Bague_entrelacee.jpg"
+          }
         },
         "image_block_WRx4Fh": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Bague_opale_4.jpg"
+          }
         },
         "image_block_8t6pg8": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Pendentif_opale_1.jpg"
+          }
         },
         "image_block_qh8TgA": {
           "type": "image_block",
@@ -311,6 +319,7 @@
         "image_block_NbpMXc",
         "image_block_Bf4cQy",
         "image_block_gDETxk",
+        "image_block_QtVLpT",
         "image_block_3ntcLD",
         "image_block_frc6jB",
         "image_block_wPcYJL",
@@ -319,25 +328,24 @@
         "image_block_LUVBqL",
         "image_block_ip3LwC",
         "image_block_96HDVX",
+        "image_block_K7ndjM",
         "image_block_M4rpnc",
         "image_block_Yfh9zi",
         "image_block_Bnm86K",
         "image_block_xjDF8A",
         "image_block_wJMWGc",
-        "image_block_K7ndjM",
         "image_block_iNJNej",
         "image_block_BQNpf3",
-        "image_block_zRbaNH",
         "image_block_VDGFfJ",
         "image_block_R47tdi",
         "image_block_qrRCbF",
         "image_block_jch8WG",
+        "image_block_zRbaNH",
         "image_block_teL7c3",
         "image_block_cwWBi8",
         "image_block_e6FG4g",
         "image_block_69GXKF",
         "image_block_KTeWHk",
-        "image_block_QtVLpT",
         "image_block_WRx4Fh",
         "image_block_8t6pg8",
         "image_block_qh8TgA",
