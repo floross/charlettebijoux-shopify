@@ -119,6 +119,8 @@
       "sku": "SKU",
       "on_sale": "Sale",
       "product_variants": "Product variants",
+      "preorder": "Pre-order",
+      "estimated_shipping_on_date": "Estimated shipping: __DATE__ (__DAYS__ days).",
       "media": {
         "gallery_viewer": "Gallery Viewer",
         "load_image": "Load image {{ index }} in gallery view",

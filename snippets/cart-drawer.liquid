@@ -15,6 +15,20 @@
   .drawer {
     visibility: hidden;
   }
+  /* Précommande (badge + ETA) */
+  .cart-line__preorder {
+    margin-top: 0.25rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+  .cart-line__preorder .badge {
+    display: inline-block;
+  }
+  .cart-line__eta {
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
@@ -154,6 +168,26 @@
                             {{- item.product.title | escape -}}
                           </a>
 
+                          {%- comment -%} Précommande + ETA {%- endcomment -%}
+                          {%- assign is_preorder = false -%}
+                          {%- if item.properties and item.properties.Preorder == 'true' -%}
+                            {%- assign is_preorder = true -%}
+                          {%- endif -%}
+                          {%- assign eta_iso = '' -%}
+                          {%- if item.properties and item.properties['Estimated shipping'] -%}
+                            {%- assign eta_iso = item.properties['Estimated shipping'] -%}
+                          {%- endif -%}
+                          {%- if is_preorder -%}
+                            <div class="cart-line__preorder">
+                              <span class="badge">{{ 'products.product.preorder' | t }}</span>
+                              {%- if eta_iso != blank -%}
+                                <div class="cart-line__eta">
+                                  Expédition estimée&nbsp;: {{ eta_iso | date: '%-d %B %Y' }}
+                                </div>
+                              {%- endif -%}
+                            </div>
+                          {%- endif -%}
+
                           {%- if item.original_price != item.final_price -%}
                             <div class="cart-item__discounted-prices">
                               <span class="visually-hidden">
@@ -194,7 +228,11 @@
 
                               {%- for property in item.properties -%}
                                 {%- assign property_first_char = property.first | slice: 0 -%}
-                                {%- if property.last != blank and property_first_char != '_' -%}
+                                {%- if property.last != blank
+                                  and property_first_char != '_'
+                                  and property.first != 'Preorder'
+                                  and property.first != 'Estimated shipping'
+                                -%}
                                   <div class="product-option">
                                     <dt>{{ property.first }}:</dt>
                                     <dd>
@@ -258,7 +296,10 @@
                             {%- endif -%}
 
                             {%- if item.variant.available and item.unit_price_measurement -%}
-                              {% render 'unit-price', price: item.unit_price, measurement: item.unit_price_measurement %}
+                              {% render 'unit-price',
+                                price: item.unit_price,
+                                measurement: item.unit_price_measurement
+                              %}
                             {%- endif -%}
                           </div>
                         </td>

@@ -28,6 +28,7 @@
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {%- endunless -%}
+
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
@@ -40,6 +41,100 @@
       assign ratio = 1
     endif
   -%}
+
+  {%- comment -%} --- Précommande / Cap logique pour la carte --- {%- endcomment -%}
+  {%- liquid
+    assign product = card_product
+    assign v = product.selected_or_first_available_variant
+
+    # Métaobjet: override variante > produit
+    assign preorder_ref = product.metafields.custom.preorder
+    if v and v.metafields and v.metafields.custom and v.metafields.custom.preorder_override
+      assign preorder_ref = v.metafields.custom.preorder_override
+    endif
+
+    # Déréférencer (.value si nécessaire)
+    assign ps = null
+    if preorder_ref
+      if preorder_ref.value
+        assign ps = preorder_ref.value
+      else
+        assign ps = preorder_ref
+      endif
+    endif
+
+    # Champs
+    assign enabled = false
+    if ps and ps.enabled
+      assign enabled = true
+    endif
+
+    assign max = 0
+    if ps and ps.max
+      assign max = ps.max | plus: 0
+    endif
+
+    # État stock & politique
+    assign has_no_stock = false
+    if v and v.inventory_quantity <= 0
+      assign has_no_stock = true
+    endif
+
+    assign can_backorder = false
+    if v and v.inventory_policy == 'continue'
+      assign can_backorder = true
+    endif
+
+    # Cap (0 = illimité) : cap atteint si inventaire <= -max
+    assign cap_reached = false
+    assign limit_allows = true
+    if max and max > 0
+      assign neg_max = 0 | minus: max
+      if v and v.inventory_quantity <= neg_max
+        assign limit_allows = false
+        assign cap_reached = true
+      endif
+    endif
+
+    # Autorisation précommande & blocages
+    assign allow_preorder = false
+    if enabled and has_no_stock and can_backorder and limit_allows
+      assign allow_preorder = true
+    endif
+
+    assign must_block_purchase = false
+    if has_no_stock and can_backorder and enabled == false
+      assign must_block_purchase = true
+    endif
+
+    assign blocked = false
+    if must_block_purchase
+      assign blocked = true
+    endif
+    if cap_reached
+      assign blocked = true
+    endif
+
+    # Bouton désactivé ?
+    assign disable_button = false
+    if blocked
+      assign disable_button = true
+    endif
+    if v and v.available == false and allow_preorder == false
+      assign disable_button = true
+    endif
+
+    # ETA (jours) -> ISO pour propriété (pas d’affichage sur la carte)
+    assign eta_days = 0
+    if ps and ps.eta
+      assign eta_days = ps.eta | plus: 0
+    endif
+    assign now_ts = 'now' | date: '%s' | plus: 0
+    assign eta_seconds = eta_days | times: 86400
+    assign ship_ts = now_ts | plus: eta_seconds
+    assign ship_date_iso = ship_ts | date: '%Y-%m-%d'
+  -%}
+
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="
@@ -125,7 +220,7 @@
             </h3>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
-            {%- if card_product.available == false -%}
+            {%- if blocked or card_product.available == false -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
@@ -350,10 +445,18 @@
                     name="id"
                     value="{{ card_product.selected_or_first_available_variant.id }}"
                     class="product-variant-id"
-                    {% if card_product.selected_or_first_available_variant.available == false %}
+                    {% if disable_button %}
                       disabled
                     {% endif %}
                   >
+                  <span id="preorder-props-{{ section.id }}-{{ card_product.id }}">
+                    {%- if allow_preorder -%}
+                      <input type="hidden" name="properties[Preorder]" value="true">
+                      {%- if eta_days and eta_days > 0 -%}
+                        <input type="hidden" name="properties[Estimated shipping]" value="{{ ship_date_iso }}">
+                      {%- endif -%}
+                    {%- endif -%}
+                  </span>
                   <button
                     id="{{ product_form_id }}-submit"
                     type="submit"
@@ -363,12 +466,16 @@
                     aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                     aria-live="polite"
                     data-sold-out-message="true"
-                    {% if card_product.selected_or_first_available_variant.available == false %}
-                      disabled
+                    {% if disable_button %}
+                      disabled aria-disabled="true"
                     {% endif %}
                   >
                     <span>
-                      {%- if card_product.selected_or_first_available_variant.available -%}
+                      {%- if allow_preorder -%}
+                        {{ 'products.product.preorder' | t }}
+                      {%- elsif blocked -%}
+                        {{ 'products.product.sold_out' | t }}
+                      {%- elsif card_product.selected_or_first_available_variant.available -%}
                         {{ 'products.product.add_to_cart' | t }}
                       {%- else -%}
                         {{ 'products.product.sold_out' | t }}
@@ -549,7 +656,7 @@
           {% endif %}
         {% endif %}
         <div class="card__badge {{ settings.badge_position }}">
-          {%- if card_product.available == false -%}
+          {%- if blocked or card_product.available == false -%}
             <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
               class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"

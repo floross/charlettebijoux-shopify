@@ -5,11 +5,115 @@
   - block: {Object} passing the block information.
   - product_form_id: {String} product form id.
   - section_id: {String} id of section to which this snippet belongs.
-  - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
+  - show_pickup_availability: {Boolean} for the pickup availability.
 
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
+
+{%- liquid
+  assign v = product.selected_or_first_available_variant
+
+  # 1) Choisir la référence (override variante > produit)
+  assign preorder_ref = product.metafields.custom.preorder
+  if v and v.metafields and v.metafields.custom and v.metafields.custom.preorder_override
+    assign preorder_ref = v.metafields.custom.preorder_override
+  endif
+
+  # 2) Déréférencer (.value si nécessaire)
+  assign ps = null
+  if preorder_ref
+    if preorder_ref.value
+      assign ps = preorder_ref.value
+    else
+      assign ps = preorder_ref
+    endif
+  endif
+
+  # 3) Champs
+  assign enabled = false
+  if ps and ps.enabled
+    assign enabled = true
+  endif
+
+  assign max = 0
+  if ps and ps.max
+    assign max = ps.max | plus: 0
+  endif
+
+  # état stock & politique d'inventaire
+  assign has_no_stock = false
+  if v and v.inventory_quantity <= 0
+    assign has_no_stock = true
+  endif
+
+  assign can_backorder = false
+  if v and v.inventory_policy == 'continue'
+    assign can_backorder = true
+  endif
+
+  # Cap (0 = illimité) : cap atteint si inventaire <= -max
+  assign cap_reached = false
+  assign limit_allows = true
+  if max and max > 0
+    assign neg_max = 0 | minus: max
+    if v and v.inventory_quantity <= neg_max
+      assign limit_allows = false
+      assign cap_reached = true
+    endif
+  endif
+
+  # Autorisation précommande & blocages
+  assign allow_preorder = false
+  if enabled and has_no_stock and can_backorder and limit_allows
+    assign allow_preorder = true
+  endif
+
+  assign must_block_purchase = false
+  if has_no_stock and can_backorder and enabled == false
+    assign must_block_purchase = true
+  endif
+
+  # Bloqué si cap atteint OU blocage demandé
+  assign blocked = false
+  if must_block_purchase
+    assign blocked = true
+  endif
+  if cap_reached
+    assign blocked = true
+  endif
+
+  # Désactivation du bouton
+  assign disable_button = false
+  if blocked
+    assign disable_button = true
+  endif
+  if v and v.available == false and allow_preorder == false
+    assign disable_button = true
+  endif
+
+  # Paiement accéléré visible seulement si non bloqué et (dispo ou préco)
+  assign show_payment_button = false
+  if blocked == false
+    if v
+      if v.available or allow_preorder
+        assign show_payment_button = true
+      endif
+    endif
+  endif
+
+  # ETA (jours -> date estimée)
+  assign eta_days = 0
+  if ps and ps.eta
+    assign eta_days = ps.eta | plus: 0
+  endif
+  assign now_ts = 'now' | date: '%s' | plus: 0
+  assign eta_seconds = eta_days | times: 86400
+  assign ship_ts = now_ts | plus: eta_seconds
+  assign ship_date_iso = ship_ts | date: '%Y-%m-%d'
+  assign ship_date_human = ship_ts | date: '%-d %B %Y'
+-%}
+
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
@@ -70,34 +174,118 @@
               assign quantity_rule_soldout = true
             endif
           -%}
+
+          <!-- Placeholders contrôlés par JS (fallback Liquid initial inclus) -->
+          <span id="preorder-props-{{ section_id }}">
+            {%- if allow_preorder -%}
+              <input type="hidden" name="properties[Preorder]" value="true">
+              {%- if eta_days and eta_days > 0 -%}
+                <input type="hidden" name="properties[Estimated shipping]" value="{{ ship_date_iso }}">
+              {%- endif -%}
+            {%- endif -%}
+          </span>
+
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
             class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
-            {% if product.selected_or_first_available_variant.available == false
-              or quantity_rule_soldout
-              or product.selected_or_first_available_variant == null
-            %}
-              disabled
-            {% endif %}
+            {%- if disable_button -%}
+              disabled aria-disabled="true"
+            {%- endif -%}
+            data-label-preorder="{{ 'products.product.preorder' | t }}"
+            data-label-add="{{ 'products.product.add_to_cart' | t }}"
+            data-label-soldout="{{ 'products.product.sold_out' | t }}"
           >
             <span>
               {%- if product.selected_or_first_available_variant == null -%}
                 {{ 'products.product.unavailable' | t }}
-              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+              {%- elsif allow_preorder -%}
+                {{ 'products.product.preorder' | t }}
+              {%- elsif blocked -%}
                 {{ 'products.product.sold_out' | t }}
-              {%- else -%}
+              {%- elsif v.available -%}
                 {{ 'products.product.add_to_cart' | t }}
+              {%- else -%}
+                {{ 'products.product.sold_out' | t }}
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
           </button>
+
+          <div
+            id="preorder-dynamic-{{ section_id }}"
+            class="mt-3 text-sm"
+            data-i18n-eta-template="{{ 'products.product.estimated_shipping_on_date' | t }}"
+            {%- if allow_preorder == false or eta_days == 0 -%}
+              hidden
+            {%- endif -%}
+          >
+            {%- if allow_preorder and eta_days and eta_days > 0 -%}
+              <p>Expédition estimée&nbsp;: {{ ship_date_human }} ({{ eta_days }} jours).</p>
+            {%- endif -%}
+          </div>
+
           {%- if show_dynamic_checkout -%}
-            {{ form | payment_button }}
+            {%- if show_payment_button -%}
+              {{ form | payment_button }}
+            {%- endif -%}
           {%- endif -%}
         </div>
       {%- endform -%}
+
+      <script
+        type="application/json"
+        id="preorder-config-{{ section_id }}"
+        data-section-id="{{ section_id }}"
+        data-form-id="{{ product_form_id }}"
+      >
+        {
+        {%- for variant in product.variants -%}
+          {%- liquid
+            assign vps_ref = product.metafields.custom.preorder
+            if variant.metafields and variant.metafields.custom and variant.metafields.custom.preorder_override
+              assign vps_ref = variant.metafields.custom.preorder_override
+            endif
+            assign vps = nil
+            if vps_ref
+              if vps_ref.value
+                assign vps = vps_ref.value
+              else
+                assign vps = vps_ref
+              endif
+            endif
+            assign ve = false
+            if vps and vps.enabled
+              assign ve = true
+            endif
+            assign vmax = 0
+            if vps and vps.max
+              assign vmax = vps.max | plus: 0
+            endif
+            assign veta = 0
+            if vps and vps.eta
+              assign veta = vps.eta | plus: 0
+            endif
+            assign v_can_backorder = false
+            if variant.inventory_policy == 'continue'
+              assign v_can_backorder = true
+            endif
+          -%}
+          "{{ variant.id }}": {
+            "available": {{ variant.available | json }},
+            "inventory_quantity": {{ variant.inventory_quantity | json }},
+            "can_backorder": {{ v_can_backorder | json }},
+            "enabled": {{ ve | json }},
+            "max": {{ vmax | json }},
+            "eta_days": {{ veta | json }}
+          }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+        }
+      </script>
+
+      <!-- CHARGEMENT DU JS EXTERNE -->
+      <script src="{{ 'preorder.js' | asset_url }}" defer></script>
     </product-form>
   {%- else -%}
     <div class="product-form">

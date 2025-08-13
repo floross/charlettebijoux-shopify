@@ -111,6 +111,8 @@
       "description": "Description",
       "on_sale": "Promotion",
       "product_variants": "Variantes de produits",
+      "preorder": "Précommande",
+      "estimated_shipping_on_date": "Expédition estimée\u00A0: __DATE__ (__DAYS__ jours).",
       "quantity": {
         "label": "Quantité",
         "input_label": "Quantité pour {{ product }}",
