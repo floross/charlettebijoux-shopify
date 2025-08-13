@@ -22,7 +22,8 @@
             "parallax-subh": "h3",
             "par1_showbutton": true,
             "par1_button_label": "",
-            "par1_button_link": ""
+            "par1_button_link": "",
+            "par_speed_block": 35
           }
         }
       },
@@ -41,7 +42,8 @@
         "par_txt_top_pos": "50",
         "par-en-over": true,
         "color_over": "#000000",
-        "par_opacity": 50
+        "par_opacity": 50,
+        "par_speed": 35
       }
     },
     "rich_text": {
@@ -50,7 +52,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Lou, Bijoutière-Joaillière",
+            "heading": "Lou, bijoutière-joaillière",
             "heading_size": "h1"
           }
         },
