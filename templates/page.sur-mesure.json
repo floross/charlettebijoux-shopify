@@ -196,12 +196,6 @@
             "image": "shopify://shop_images/Collier_opale_triangle.jpg"
           }
         },
-        "image_block_xjDF8A": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/Bague_boules_et_diamant.jpg"
-          }
-        },
         "image_block_wJMWGc": {
           "type": "image_block",
           "settings": {
@@ -368,7 +362,6 @@
         "image_block_M4rpnc",
         "image_block_Yfh9zi",
         "image_block_Bnm86K",
-        "image_block_xjDF8A",
         "image_block_wJMWGc",
         "image_block_iNJNej",
         "image_block_BQNpf3",
