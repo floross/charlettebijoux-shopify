@@ -294,21 +294,57 @@
         },
         "image_block_qh8TgA": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Bague_or_jaune_amethyste.jpg"
+          }
         },
         "image_block_LnRNzH": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Bague_opale_4.jpg"
+          }
         },
         "image_block_9mEbab": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Boucles_d_oreille_argent.jpg"
+          }
         },
         "image_block_3mnxUK": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/Collier_amethyste.jpg"
+          }
         },
         "image_block_Q8qkRm": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_49XQdJ": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_MAQNia": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_cGf7WH": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_cTRpR7": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_pKhfdQ": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_6EHXjX": {
+          "type": "image_block",
+          "settings": {}
+        },
+        "image_block_yR3XEQ": {
           "type": "image_block",
           "settings": {}
         }
@@ -352,7 +388,14 @@
         "image_block_LnRNzH",
         "image_block_9mEbab",
         "image_block_3mnxUK",
-        "image_block_Q8qkRm"
+        "image_block_Q8qkRm",
+        "image_block_49XQdJ",
+        "image_block_MAQNia",
+        "image_block_cGf7WH",
+        "image_block_cTRpR7",
+        "image_block_pKhfdQ",
+        "image_block_6EHXjX",
+        "image_block_yR3XEQ"
       ],
       "name": "Galerie LightGallery",
       "settings": {}
