@@ -23,7 +23,7 @@
         "text_LA4g6U": {
           "type": "text",
           "settings": {
-            "image": "shopify://shop_images/50514809-295544171102463-8303071595996381184-n-2-1080x604.png",
+            "image": "shopify://shop_images/Alliances_martelees_et_3_anneaux.jpg",
             "txt1-hd1": "Alliances",
             "parallax-h": "h2",
             "txt1-hd2": "",
@@ -52,6 +52,49 @@
         "color_over": "#000000",
         "par_opacity": 50,
         "par_speed": 35
+      }
+    },
+    "rich_text_ByYfpY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_FXmmBm": {
+          "type": "heading",
+          "settings": {
+            "heading": "Parler de sa marque",
+            "heading_size": "h1"
+          }
+        },
+        "text_cdPdQF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Partagez des informations sur votre marque. Décrivez un produit, partagez des annonces ou souhaitez la bienvenue à vos clients dans votre boutique.</p>"
+          }
+        },
+        "button_FaAbBc": {
+          "type": "button",
+          "settings": {
+            "button_label": "Texte du bouton",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_FXmmBm",
+        "text_cdPdQF",
+        "button_FaAbBc"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "lightgallery_WxjUQq": {
@@ -193,6 +236,7 @@
   "order": [
     "main",
     "parralax_YCUUxg",
+    "rich_text_ByYfpY",
     "lightgallery_WxjUQq",
     "rich_text_Jh889M"
   ]
