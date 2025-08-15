@@ -76,6 +76,46 @@
         "padding_bottom": 0
       }
     },
+    "image_with_text_hb6KqP": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_43WUyD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>La personne derrière Charlette bijoux, c'est moi, Lou. L'envie de crééer mes propres bijoux est née en 2019 à la suite de mes 6 années d'études sur Lyon et Montbrison. Après deux années passées à Montréal, je me suis ré installée sur Lyon la ville de mes études.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_4DnzgG": {
+          "type": "button",
+          "settings": {
+            "button_label": "Texte du bouton",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "text_43WUyD",
+        "button_4DnzgG"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Portrait3.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -161,6 +201,7 @@
   "order": [
     "parralax_3pab9i",
     "rich_text",
+    "image_with_text_hb6KqP",
     "featured_collection",
     "multicolumn"
   ]
