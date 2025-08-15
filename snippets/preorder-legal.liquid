@@ -1,0 +1,53 @@
+{%- comment -%}
+  Affiche une mention légale quand le panier contient au moins un article en précommande.
+  Ajoute une case obligatoire qui se propage en attributes[] jusqu’à la commande.
+{%- endcomment -%}
+
+{%- assign has_preorder = false -%}
+{%- for item in cart.items -%}
+  {%- if item.properties and item.properties.Preorder == 'true' -%}
+    {%- assign has_preorder = true -%}
+    {% break %}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if has_preorder -%}
+  <div class="preorder-legal card" data-preorder-legal>
+    <div class="card__content">
+      <p class="text-sm">
+        <strong>Précommande&nbsp;:</strong>
+        Au moins un article de votre panier est vendu en précommande. Conformément aux articles L.216-1 et suivants du
+        Code de la consommation, nous indiquons un délai estimatif d’expédition ci-dessous.
+      </p>
+
+      <ul class="list-disc pl-5 text-sm">
+        {%- for item in cart.items -%}
+          {%- if item.properties and item.properties.Preorder == 'true' -%}
+            <li>
+              {{ item.product.title }}
+              {%- if item.variant.title and item.variant.title != 'Default Title' -%}
+                &nbsp;— {{ item.variant.title }}
+              {%- endif -%}
+              {%- if item.properties['Estimated shipping'] -%}
+                &nbsp;: expédition estimée&nbsp;{{ item.properties['Estimated shipping'] | date: '%-d %B %Y' }}
+              {%- endif -%}
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+
+      <label class="flex items-center gap-2 mt-3">
+        <input
+          type="checkbox"
+          id="preorder-ack"
+          name="attributes[Preorder acknowledgment]"
+          value="yes"
+          required
+        >
+        <span class="text-sm">
+          J’ai lu et j’accepte les informations relatives à la précommande et aux délais estimés.
+        </span>
+      </label>
+    </div>
+  </div>
+{%- endif -%}

@@ -233,7 +233,6 @@
           {%- endif -%}
         </div>
       {%- endform -%}
-
       <script
         type="application/json"
         id="preorder-config-{{ section_id }}"
@@ -247,6 +246,7 @@
             if variant.metafields and variant.metafields.custom and variant.metafields.custom.preorder_override
               assign vps_ref = variant.metafields.custom.preorder_override
             endif
+
             assign vps = nil
             if vps_ref
               if vps_ref.value
@@ -255,30 +255,76 @@
                 assign vps = vps_ref
               endif
             endif
+
             assign ve = false
             if vps and vps.enabled
               assign ve = true
             endif
+
             assign vmax = 0
             if vps and vps.max
               assign vmax = vps.max | plus: 0
             endif
+
             assign veta = 0
             if vps and vps.eta
               assign veta = vps.eta | plus: 0
             endif
+
             assign v_can_backorder = false
             if variant.inventory_policy == 'continue'
               assign v_can_backorder = true
             endif
+
+            assign v_has_no_stock = false
+            if variant.inventory_quantity <= 0
+              assign v_has_no_stock = true
+            endif
+
+            # cap
+            assign v_cap_reached = false
+            assign v_limit_allows = true
+            if vmax and vmax > 0
+              assign negmax = 0 | minus: vmax
+              if variant.inventory_quantity <= negmax
+                assign v_limit_allows = false
+                assign v_cap_reached = true
+              endif
+            endif
+
+            assign v_allow_preorder = false
+            if ve and v_has_no_stock and v_can_backorder and v_limit_allows
+              assign v_allow_preorder = true
+            endif
+
+            assign v_must_block_purchase = false
+            if v_has_no_stock and v_can_backorder and ve == false
+              assign v_must_block_purchase = true
+            endif
+
+            assign v_blocked = false
+            if v_must_block_purchase
+              assign v_blocked = true
+            endif
+            if v_cap_reached
+              assign v_blocked = true
+            endif
+
+            # décision finale (sans fuite d’inventaire)
+            assign v_purchasable = false
+            if v_blocked == false
+              if variant.available or v_allow_preorder
+                assign v_purchasable = true
+              endif
+            endif
           -%}
           "{{ variant.id }}": {
             "available": {{ variant.available | json }},
-            "inventory_quantity": {{ variant.inventory_quantity | json }},
-            "can_backorder": {{ v_can_backorder | json }},
-            "enabled": {{ ve | json }},
-            "max": {{ vmax | json }},
-            "eta_days": {{ veta | json }}
+            "allow_preorder": {{ v_allow_preorder | json }},
+            "blocked": {{ v_blocked | json }},
+            "purchasable": {{ v_purchasable | json }},
+            "eta_days": {{ veta | json }},
+            "options": {{ variant.options | json }}
           }{%- unless forloop.last -%},{%- endunless -%}
         {%- endfor -%}
         }
