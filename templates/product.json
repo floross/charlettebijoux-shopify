@@ -59,7 +59,7 @@
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials",
+            "heading": "Matériaux",
             "icon": "leather",
             "content": "{{ product.metafields.custom.materials | metafield_tag }}",
             "page": ""
