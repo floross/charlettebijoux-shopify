@@ -77,7 +77,7 @@
         "collapsible-row-3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Care Instructions",
+            "heading": "Entretien",
             "icon": "heart",
             "content": "{{ product.metafields.custom.care_instructions | metafield_tag }}",
             "page": ""
