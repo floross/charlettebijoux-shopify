@@ -79,7 +79,7 @@
           "settings": {
             "heading": "Care Instructions",
             "icon": "heart",
-            "content": "",
+            "content": "{{ product.metafields.custom.care_instructions | metafield_tag }}",
             "page": ""
           }
         },
