@@ -85,19 +85,10 @@
             "text": "<p>La personne derrière Charlette bijoux, c'est moi, Lou. Charlette c'est le prénom de ma grand-mère maternelle, une femme forte courageuse et pleine de vie. </p><p>Passionnée par les travaux manuels, et la création je me suis tournée vers la bijouterie-joaillerie en 2012 à Lyon. Est venue ensuite l'envie de créer mes propres bijoux en 2019 à la suite de mes six années d'études sur Lyon et Montbrison. Après deux années passées à Montréal, je me suis ré installée sur Lyon la ville de mes études. Je façonne à la main tous les bijoux que vous pourrez voir sur le site</p><p>Soucieuse de la qualité des produits, je sélectionne avec soins mes fournisseurs, et propose de recycler votre or soit pour le ré-utiliser soit pour que mes fournisseurs le recycle.</p><p>Vous pourrez trouver des minis collections, des alliances déjà réalisées ainsi que des bijoux sur-mesure.</p>",
             "text_style": "body"
           }
-        },
-        "button_4DnzgG": {
-          "type": "button",
-          "settings": {
-            "button_label": "Texte du bouton",
-            "button_link": "",
-            "button_style_secondary": false
-          }
         }
       },
       "block_order": [
-        "text_43WUyD",
-        "button_4DnzgG"
+        "text_43WUyD"
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
@@ -146,40 +137,6 @@
     },
     "multicolumn": {
       "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
       "settings": {
         "title": "",
         "heading_size": "h1",
