@@ -46,36 +46,6 @@
         "par_speed": 35
       }
     },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Lou, bijoutière-joaillière",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Créée en 2019, à la suite de six années d'études en bijouterie-joaillerie sur Lyon. J'ai eu le désir de créer mes propres bijoux. L'architecture, la nature et les lignes géométriques m'inspirent beaucoup.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -126,7 +96,6 @@
   },
   "order": [
     "parralax_3pab9i",
-    "rich_text",
     "featured_collection",
     "multicolumn"
   ]
