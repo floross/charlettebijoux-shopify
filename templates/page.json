@@ -9,41 +9,6 @@
  */
 {
   "sections": {
-    "parralax_YCUUxg": {
-      "type": "parralax",
-      "blocks": {
-        "text_LA4g6U": {
-          "type": "text",
-          "settings": {
-            "image": "shopify://shop_images/50514809-295544171102463-8303071595996381184-n-2-1080x604.png",
-            "txt1-hd1": "Sur-mesure",
-            "parallax-h": "h2",
-            "txt1-hd2": "",
-            "parallax-subh": "h3",
-            "par1_showbutton": true,
-            "par1_button_label": "",
-            "par1_button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_LA4g6U"
-      ],
-      "name": "Parallax",
-      "settings": {
-        "paral-full": true,
-        "par_img_sz": "400",
-        "par_hd_sz": "55",
-        "par_subhd_sz": "25",
-        "par_button_sz": "25",
-        "par_letter_sp": "1",
-        "par_txt_align": "center",
-        "par_txt_top_pos": "50",
-        "par-en-over": true,
-        "color_over": "#000000",
-        "par_opacity": 50
-      }
-    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -51,105 +16,40 @@
         "padding_bottom": 28
       }
     },
-    "lightgallery_WxjUQq": {
-      "type": "lightgallery",
+    "image_with_text_pcKKUN": {
+      "type": "image-with-text",
       "blocks": {
-        "image_block_TBbPUY": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/IMG_8624.jpg"
-          }
-        },
-        "image_block_zGVLrx": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2048.jpg"
-          }
-        },
-        "image_block_cbKbYF": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2061.jpg"
-          }
-        },
-        "image_block_NbpMXc": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2035.jpg"
-          }
-        },
-        "image_block_AyQXbV": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2009.jpg"
-          }
-        },
-        "image_block_Tbj9rf": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/IMG_2052.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "image_block_TBbPUY",
-        "image_block_zGVLrx",
-        "image_block_cbKbYF",
-        "image_block_NbpMXc",
-        "image_block_AyQXbV",
-        "image_block_Tbj9rf"
-      ],
-      "name": "Galerie LightGallery",
-      "settings": {}
-    },
-    "rich_text_Jh889M": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_gk39LX": {
-          "type": "heading",
-          "settings": {
-            "heading": "Parler de sa marque",
-            "heading_size": "h1"
-          }
-        },
-        "text_meNK8i": {
+        "text_Bh8tj7": {
           "type": "text",
           "settings": {
-            "text": "<p>Partagez des informations sur votre marque. Décrivez un produit, partagez des annonces ou souhaitez la bienvenue à vos clients dans votre boutique.</p>"
-          }
-        },
-        "button_eHRTrE": {
-          "type": "button",
-          "settings": {
-            "button_label": "Texte du bouton",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "<p>La personne derrière Charlette bijoux, c'est moi, Lou. Charlette c'est le prénom de ma grand-mère maternelle, une femme forte courageuse et pleine de vie.</p><p>Passionnée par les travaux manuels, et la création je me suis tournée vers la bijouterie-joaillerie en 2012 à Lyon. Est venue ensuite l'envie de créer mes propres bijoux en 2019 à la suite de mes six années d'études sur Lyon et Montbrison. Après deux années passées à Montréal, je me suis ré installée sur Lyon la ville de mes études. Je façonne à la main tous les bijoux que vous pourrez voir sur le site</p><p>Soucieuse de la qualité des produits, je sélectionne avec soins mes fournisseurs, et propose de recycler votre or soit pour le ré-utiliser soit pour que mes fournisseurs le recycle.</p><p>Vous pourrez trouver des minis collections, des alliances déjà réalisées ainsi que des bijoux sur-mesure.</p>",
+            "text_style": "body"
           }
         }
       },
       "block_order": [
-        "heading_gk39LX",
-        "text_meNK8i",
-        "button_eHRTrE"
+        "text_Bh8tj7"
       ],
-      "name": "t:sections.rich-text.presets.name",
+      "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "image": "shopify://shop_images/Portrait3.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
         "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
-    "parralax_YCUUxg",
-    "lightgallery_WxjUQq",
-    "rich_text_Jh889M"
+    "image_with_text_pcKKUN"
   ]
 }

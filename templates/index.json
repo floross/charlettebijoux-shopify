@@ -76,37 +76,6 @@
         "padding_bottom": 0
       }
     },
-    "image_with_text_hb6KqP": {
-      "type": "image-with-text",
-      "blocks": {
-        "text_43WUyD": {
-          "type": "text",
-          "settings": {
-            "text": "<p>La personne derrière Charlette bijoux, c'est moi, Lou. Charlette c'est le prénom de ma grand-mère maternelle, une femme forte courageuse et pleine de vie. </p><p>Passionnée par les travaux manuels, et la création je me suis tournée vers la bijouterie-joaillerie en 2012 à Lyon. Est venue ensuite l'envie de créer mes propres bijoux en 2019 à la suite de mes six années d'études sur Lyon et Montbrison. Après deux années passées à Montréal, je me suis ré installée sur Lyon la ville de mes études. Je façonne à la main tous les bijoux que vous pourrez voir sur le site</p><p>Soucieuse de la qualité des produits, je sélectionne avec soins mes fournisseurs, et propose de recycler votre or soit pour le ré-utiliser soit pour que mes fournisseurs le recycle.</p><p>Vous pourrez trouver des minis collections, des alliances déjà réalisées ainsi que des bijoux sur-mesure.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "text_43WUyD"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/Portrait3.jpg",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -158,7 +127,6 @@
   "order": [
     "parralax_3pab9i",
     "rich_text",
-    "image_with_text_hb6KqP",
     "featured_collection",
     "multicolumn"
   ]
