@@ -404,56 +404,12 @@
       ],
       "name": "Galerie LightGallery",
       "settings": {}
-    },
-    "rich_text_Jh889M": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_gk39LX": {
-          "type": "heading",
-          "settings": {
-            "heading": "Parler de sa marque",
-            "heading_size": "h1"
-          }
-        },
-        "text_meNK8i": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Partagez des informations sur votre marque. Décrivez un produit, partagez des annonces ou souhaitez la bienvenue à vos clients dans votre boutique.</p>"
-          }
-        },
-        "button_eHRTrE": {
-          "type": "button",
-          "settings": {
-            "button_label": "Texte du bouton",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_gk39LX",
-        "text_meNK8i",
-        "button_eHRTrE"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "main",
     "parralax_YCUUxg",
     "rich_text_TFLTqy",
-    "lightgallery_WxjUQq",
-    "rich_text_Jh889M"
+    "lightgallery_WxjUQq"
   ]
 }
