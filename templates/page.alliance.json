@@ -26,8 +26,8 @@
             "image": "shopify://shop_images/Alliances_martelees_et_3_anneaux.jpg",
             "txt1-hd1": "Alliances",
             "parallax-h": "h2",
-            "txt1-hd2": "",
-            "parallax-subh": "h3",
+            "txt1-hd2": "Faites avec soin",
+            "parallax-subh": "h2",
             "par1_showbutton": true,
             "par1_button_label": "",
             "par1_button_link": "",
@@ -60,7 +60,7 @@
         "text_cdPdQF": {
           "type": "text",
           "settings": {
-            "text": "<p>L'alliance est le bijou que vous porterez toute votre vie et que vous pourrez transmettre. Il est donc important que celle-ci vous corresponde. Je peux</p><p>Les effets de matière et de texture m'intéressent particuilièrement dans le travail des alliances. Que ce soit du ciselé ou du martelage</p>"
+            "text": "<p>J'aime travailler les effets de matière, en jouant avec les outils dans mon atelier. Du martelé avec la bouterolle, au ciselé avec un forêt taillé sur mesure. Les possibilités sont multiples.</p><p>L'alliance est le bijou que vous porterez toute votre vie. Il est donc important que celle-ci vous ressemble et vous plaise. Nous pouvons les réaliser, en or jaune, rouge ou blanc 750°/°° ou appelé 18 carats, et même en argent 925°/°°.  Nous pouvons y mettre des pierres si vous le souhaitez, et bien sur lorsque la largeur le permets une gravure pourra venir à l'intérieur de celle-ci.</p><p>Nous pouvons nous rencontrer dans mon atelier partagé sur Lyon, ou bien sur l'île de Ré, ou même en visio, pour discuter ensemble de votre projet.</p><p>N'hésitez pas à me contacter dans la rubrique contact.</p><p>Vous trouverez quelques réalisations d'alliance crées sur-mesure.</p>"
           }
         }
       },
