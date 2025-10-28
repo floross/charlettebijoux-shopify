@@ -86,6 +86,12 @@
             "image": "shopify://shop_images/Bague_trio.jpg"
           }
         },
+        "image_block_7RK9zk": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Alliance_courbee_diamants_et_ruban.jpg"
+          }
+        },
         "image_block_zGVLrx": {
           "type": "image_block",
           "settings": {
@@ -114,12 +120,6 @@
           "type": "image_block",
           "settings": {
             "image": "shopify://shop_images/Alliance_ciselee.jpg"
-          }
-        },
-        "image_block_7RK9zk": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/Alliance_courbee_diamants_et_ruban.jpg"
           }
         },
         "image_block_AgVgpA": {
@@ -161,12 +161,12 @@
       },
       "block_order": [
         "image_block_TBbPUY",
+        "image_block_7RK9zk",
         "image_block_zGVLrx",
         "image_block_NbpMXc",
         "image_block_qNPgYh",
         "image_block_xqx4WB",
         "image_block_Nwhycq",
-        "image_block_7RK9zk",
         "image_block_AgVgpA",
         "image_block_YTr9Rr",
         "image_block_8zgrk9",
