@@ -136,7 +136,9 @@
         },
         "image_block_8zgrk9": {
           "type": "image_block",
-          "settings": {}
+          "settings": {
+            "image": "shopify://shop_images/C9874CF4-B996-4887-B731-18EBD6455354.jpg"
+          }
         },
         "image_block_iD9V3d": {
           "type": "image_block",
