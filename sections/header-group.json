@@ -13,6 +13,18 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "blocks": {
+        "announcement_7RPtBz": {
+          "type": "announcement",
+          "settings": {
+            "text": "Livraison standart offerte à partir de 120€ avec le code BIENVENUE jusqu'au 24/11      Livraison garantie avant Noël",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_7RPtBz"
+      ],
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
