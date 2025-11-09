@@ -203,7 +203,7 @@
         "image_block_iNJNej": {
           "type": "image_block",
           "settings": {
-            "image": "shopify://shop_images/Collier_meraude.jpg"
+            "image": "shopify://shop_images/Bracelet_croix_en_argent.jpg"
           }
         },
         "image_block_BQNpf3": {
@@ -284,6 +284,12 @@
             "image": "shopify://shop_images/Pendentif_opale_1.jpg"
           }
         },
+        "image_block_yR3XEQ": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Collier_double_anneau_boules.jpg"
+          }
+        },
         "image_block_qh8TgA": {
           "type": "image_block",
           "settings": {
@@ -337,12 +343,6 @@
           "settings": {
             "image": "shopify://shop_images/Chevaliere_rectangle.jpg"
           }
-        },
-        "image_block_yR3XEQ": {
-          "type": "image_block",
-          "settings": {
-            "image": "shopify://shop_images/23AFEE5C-CAA7-42B0-AC3F-308F97FF96C2.jpg"
-          }
         }
       },
       "block_order": [
@@ -380,6 +380,7 @@
         "image_block_KTeWHk",
         "image_block_WRx4Fh",
         "image_block_8t6pg8",
+        "image_block_yR3XEQ",
         "image_block_qh8TgA",
         "image_block_LnRNzH",
         "image_block_9mEbab",
@@ -388,8 +389,7 @@
         "image_block_Q8qkRm",
         "image_block_MAQNia",
         "image_block_cTRpR7",
-        "image_block_pKhfdQ",
-        "image_block_yR3XEQ"
+        "image_block_pKhfdQ"
       ],
       "name": "Galerie LightGallery",
       "settings": {}
