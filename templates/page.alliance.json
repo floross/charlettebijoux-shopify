@@ -122,10 +122,16 @@
             "image": "shopify://shop_images/Alliance_ciselee.jpg"
           }
         },
-        "image_block_AgVgpA": {
+        "image_block_XVYfPM": {
           "type": "image_block",
           "settings": {
-            "image": "shopify://shop_images/Alliances_courbee_et_ruban_brossee.jpg"
+            "image": "shopify://shop_images/Alliances_courbee_diamant_saphir.jpg"
+          }
+        },
+        "image_block_hATmDh": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/alliances_martelees_platine_et_or_rouge.jpg"
           }
         },
         "image_block_YTr9Rr": {
@@ -134,10 +140,28 @@
             "image": "shopify://shop_images/Alliances_ruban_martelee_et_diamants_tour_complet.jpg"
           }
         },
-        "image_block_8zgrk9": {
+        "image_block_TrFFcG": {
           "type": "image_block",
           "settings": {
-            "image": "shopify://shop_images/C9874CF4-B996-4887-B731-18EBD6455354.jpg"
+            "image": "shopify://shop_images/Alliances_or_gris_gravees.jpg"
+          }
+        },
+        "image_block_AgVgpA": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Alliances_courbee_et_ruban_brossee.jpg"
+          }
+        },
+        "image_block_pNhTxw": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Bague_argent_dentelle.jpg"
+          }
+        },
+        "image_block_mTcB9j": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/Alliances_or_vrille_et_argent_martelee.jpg"
           }
         }
       },
@@ -149,9 +173,13 @@
         "image_block_qNPgYh",
         "image_block_xqx4WB",
         "image_block_Nwhycq",
-        "image_block_AgVgpA",
+        "image_block_XVYfPM",
+        "image_block_hATmDh",
         "image_block_YTr9Rr",
-        "image_block_8zgrk9"
+        "image_block_TrFFcG",
+        "image_block_AgVgpA",
+        "image_block_pNhTxw",
+        "image_block_mTcB9j"
       ],
       "name": "Galerie LightGallery",
       "settings": {}
